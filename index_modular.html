@@ -86,24 +86,20 @@ body::before {
 .nav-glass { backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); background: rgba(10,26,15,0.85); border-bottom: 1px solid rgba(34,197,94,0.08); }
 
 /* ══════════════════════════════════════════
-   TYPOGRAPHY HELPERS
+   TYPOGRAPHY
 ══════════════════════════════════════════ */
-/* Gradient headline text */
 .gradient-text {
   background: linear-gradient(135deg, #86efac 0%, #22c55e 40%, #4ade80 70%, #a3e635 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-/* Section eyebrow label — mono, uppercase, small */
 .section-eyebrow {
   font-family: 'Geist Mono', monospace; font-size: 10px; font-weight: 400;
   letter-spacing: 0.18em; text-transform: uppercase; color: rgba(134,239,172,0.6);
 }
-/* Module number label used in section headers */
 .module-label {
   font-family: 'Geist Mono', monospace; font-size: 10px;
   letter-spacing: 0.18em; text-transform: uppercase; color: rgba(134,239,172,0.4);
 }
-/* Data / monospace numbers */
 .data-num { font-family: 'Geist Mono', monospace; }
 
 /* ══════════════════════════════════════════
@@ -120,7 +116,6 @@ body::before {
 /* ══════════════════════════════════════════
    ANIMATIONS
 ══════════════════════════════════════════ */
-/* Page-load fade-up stagger */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 .fade-up { animation: fadeUp 0.7s ease forwards; opacity: 0; }
 .delay-1 { animation-delay: 0.1s; }
@@ -137,7 +132,7 @@ body::before {
   animation: scan 3s ease-in-out infinite;
 }
 
-/* Pulse ring on icon dots */
+/* Pulse ring */
 @keyframes pulse-ring { 0% { transform: scale(0.8); opacity: 0.8; } 100% { transform: scale(1.8); opacity: 0; } }
 .pulse-ring::before {
   content: ''; position: absolute; inset: -4px; border-radius: 50%;
@@ -252,12 +247,10 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
 
 <!-- ════════════════════════════════════════════
      TOP NAVIGATION BAR
-     Links mirror the module order below.
+     Nav links ordered: 01 → 07 matching module sequence
 ═════════════════════════════════════════════ -->
 <nav class="nav-glass fixed top-0 left-0 right-0 z-50">
   <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
-
-    <!-- Brand -->
     <div class="flex items-center gap-2.5">
       <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
         <path d="M8 2C5 2 3 4.5 3 7c0 1.5.6 2.8 1.5 3.8L8 14l3.5-3.2C12.4 9.8 13 8.5 13 7c0-2.5-2-5-5-5z" fill="rgba(34,197,94,0.25)" stroke="#4ade80" stroke-width="1"/>
@@ -268,15 +261,12 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
         <span class="hidden sm:inline font-mono text-[10px] ml-2" style="color:rgba(74,222,128,0.35); letter-spacing:0.1em">Pomacea diffusa · Bio-Archive</span>
       </div>
     </div>
-
-    <!-- Nav links — same order as page modules -->
     <div class="hidden md:flex items-center gap-1">
-      <a href="#module-03" class="px-3 py-1.5 rounded-lg text-xs font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55); white-space:nowrap">Beginner Guide</a>
-      <a href="#module-06" class="px-3 py-1.5 rounded-lg text-xs font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55); white-space:nowrap">Breeding</a>
-      <a href="#module-07" class="px-3 py-1.5 rounded-lg text-xs font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55); white-space:nowrap">Health &amp; Safety</a>
-      <a href="#module-02" class="px-3 py-1.5 rounded-lg text-xs font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55); white-space:nowrap">Variety Index</a>
+      <a href="#module-03" class="px-3 py-1.5 rounded-lg text-xs font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55)">Beginner Guide</a>
+      <a href="#module-02" class="px-3 py-1.5 rounded-lg text-xs font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55)">Variety Index</a>
+      <a href="#module-07" class="px-3 py-1.5 rounded-lg text-xs font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55)">Health &amp; Safety</a>
+      <a href="#module-06" class="px-3 py-1.5 rounded-lg text-xs font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55)">Breeding</a>
     </div>
-
     <div class="flex items-center gap-2">
       <span class="chip text-[10px] font-mono" style="letter-spacing:0.08em">WIKI · v3.0</span>
     </div>
@@ -286,40 +276,32 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
 
 <!-- ════════════════════════════════════════════
      HERO — Holographic specimen + intro copy
-     No module ID — this is the landing section.
+     (No module-XX id — landing section only)
 ═════════════════════════════════════════════ -->
 <section class="relative min-h-screen pt-0 flex flex-col overflow-hidden">
-
-  <!-- Ambient glow orbs -->
   <div class="glow-orb w-[600px] h-[600px] bg-lime-200 opacity-[0.07] -top-40 -left-40"></div>
   <div class="glow-orb w-[400px] h-[400px] bg-emerald-400 opacity-[0.05] top-1/3 right-0"></div>
   <div class="glow-orb w-[300px] h-[300px] bg-lime-300 opacity-[0.04] bottom-0 left-1/3"></div>
-
-  <!-- Full-bleed background shimmer -->
   <div class="absolute inset-0 z-0">
     <div class="img-placeholder w-full h-full absolute inset-0 opacity-40"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-forest-900/60 via-forest-900/40 to-forest-900"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-forest-900/80 via-transparent to-forest-900/40"></div>
   </div>
 
-  <!-- Hero content: 3-column grid -->
   <div class="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 py-24 w-full" style="margin-top:-30px;">
     <div class="grid lg:grid-cols-[1fr_320px_360px] gap-10 items-center">
 
-      <!-- ── Left: headline + CTAs + parameter strip ── -->
+      <!-- Left: headline + CTAs + quick-reference strip -->
       <div style="margin-top:-10px;">
         <div class="fade-up delay-1">
           <span class="section-eyebrow">Bio-Archive · Comprehensive Field Monograph · Pomacea diffusa</span>
         </div>
-
         <h1 class="fade-up delay-2 mt-4 font-mono leading-[1.05]" style="font-size: clamp(2.2rem, 4.5vw, 4.4rem); letter-spacing:-0.03em;">
           <span style="white-space:nowrap;">MysterySnail</span><br><span class="gradient-text">Wiki</span>
         </h1>
-
         <p class="fade-up delay-3 mt-5 max-w-lg" style="font-size:15px; color:rgba(232,245,237,0.65); line-height:1.8;">
-          A complete knowledge archive on <em>Pomacea diffusa</em> husbandry. Water chemistry, color morphs, reproductive biology, and pathology — all in one scientific reference.
+          A complete scientific knowledge archive on <em>Pomacea diffusa</em> husbandry — taxonomy, color genetics, water chemistry, breeding biology, nutrition, and pathology. All in one authoritative reference.
         </p>
-
         <div class="fade-up delay-4 mt-8 flex flex-wrap gap-3">
           <a href="#module-01" class="flex items-center gap-2 bg-lime-200 font-mono font-600 text-sm px-5 py-2.5 rounded-full transition-all duration-200 hover:bg-lime-300 hover:shadow-[0_0_24px_rgba(34,197,94,0.4)]" style="color:#0a1a0f">
             Begin Reading
@@ -329,8 +311,6 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
             Color Morph Index
           </a>
         </div>
-
-        <!-- Quick-reference parameter strip -->
         <div class="fade-up delay-5 mt-10 flex flex-wrap gap-4">
           <div class="flex items-center gap-2">
             <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.2)">
@@ -374,7 +354,7 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
         </div>
       </div>
 
-      <!-- ── Center: Holographic 360° Specimen Viewer ── -->
+      <!-- Center: Holographic 360° Specimen Viewer -->
       <div class="fade-up delay-2 hidden lg:flex flex-col items-center justify-center gap-4" style="margin-top:-5px;">
         <div class="holo-label mb-1">Specimen · LIVE SCAN</div>
         <div class="specimen-wrap relative flex items-center justify-center" style="width:260px; height:260px;">
@@ -384,11 +364,9 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
           <div class="holo-ring-3"></div>
           <div class="holo-scan" style="top:30%"></div>
           <div class="specimen-inner" style="width:260px; height:260px;">
-            <!-- Replace src with your image: ./images/mystery-snail.png -->
-            <img src="./images/mystery-snail.png" alt="Pomacea diffusa · 360° holographic scan" class="specimen-img" style="width:200px; height:200px; max-width:none; object-fit:contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <!-- SVG fallback (shown until image loads) -->
+            <img src="./images/mystery-snail.png" alt="Pomacea diffusa specimen — 360° holographic scan" class="specimen-img" style="width:200px; height:200px; max-width:none; max-height:none; object-fit:contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div style="display:none; width:200px; height:200px; align-items:center; justify-content:center;">
-              <svg viewBox="0 0 200 200" width="200" height="200" fill="none">
+              <svg viewBox="0 0 200 200" width="200" height="200" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <ellipse cx="100" cy="108" rx="62" ry="56" fill="rgba(34,197,94,0.07)" stroke="rgba(34,197,94,0.25)" stroke-width="1"/>
                 <path d="M58 112 Q100 52 142 112 Q122 158 100 163 Q78 158 58 112Z" fill="rgba(34,197,94,0.1)" stroke="rgba(34,197,94,0.3)" stroke-width="1"/>
                 <path d="M82 76 Q100 62 118 76 Q122 100 100 110 Q78 100 82 76Z" fill="rgba(134,239,172,0.15)" stroke="rgba(134,239,172,0.4)" stroke-width="0.8"/>
@@ -399,7 +377,6 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
               </svg>
             </div>
           </div>
-          <!-- Corner scan brackets -->
           <div class="absolute top-2 left-2 w-4 h-4" style="border-top:1px solid rgba(74,222,128,0.5); border-left:1px solid rgba(74,222,128,0.5)"></div>
           <div class="absolute top-2 right-2 w-4 h-4" style="border-top:1px solid rgba(74,222,128,0.5); border-right:1px solid rgba(74,222,128,0.5)"></div>
           <div class="absolute bottom-2 left-2 w-4 h-4" style="border-bottom:1px solid rgba(74,222,128,0.5); border-left:1px solid rgba(74,222,128,0.5)"></div>
@@ -411,15 +388,13 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
         </div>
       </div>
 
-      <!-- ── Right: Species Profile card ── -->
+      <!-- Right: Species Profile card -->
       <div class="fade-up delay-3" style="margin-top:10px;">
         <div class="bento-card card-glow-active rounded-2xl p-5 relative" style="background:rgba(15,38,20,0.8); border:1px solid rgba(34,197,94,0.15)">
           <div class="flex items-center justify-between mb-5">
             <span class="section-eyebrow">Species Profile · Bio-Archive</span>
-            <span class="chip text-[10px] font-mono" style="white-space:nowrap; padding:4px 12px;">Pomacea diffusa</span>
+            <span class="chip text-[10px] font-mono">Pomacea diffusa</span>
           </div>
-
-          <!-- Taxonomy grid -->
           <div class="grid grid-cols-2 gap-2 mb-4">
             <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
               <div class="text-[9px] section-eyebrow mb-1">Kingdom</div>
@@ -438,38 +413,32 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
               <div class="data-num text-xs text-lime-300">South America</div>
             </div>
           </div>
-
           <div class="divider mb-4"></div>
-
-          <!-- Biological traits -->
           <div class="section-eyebrow mb-3">Biological Traits</div>
           <div class="space-y-2 mb-4">
             <div class="flex items-start gap-2.5 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.04); border:1px solid rgba(34,197,94,0.08)">
               <div class="w-1 h-1 rounded-full bg-lime-300 mt-2 flex-shrink-0"></div>
               <div>
                 <div class="text-[10px] section-eyebrow mb-0.5">Respiratory System</div>
-                <div class="text-xs leading-relaxed" style="color:rgba(232,245,237,0.7)">Bimodal: functional gill (aquatic) + lung siphon (aerial). Regularly surfaces to breathe atmospheric O₂.</div>
+                <div class="text-xs leading-relaxed" style="color:rgba(232,245,237,0.7)">Bimodal: functional ctenidium gill (aquatic) + pallial lung accessed via extensible siphon (aerial). Regularly surfaces to breathe atmospheric O₂.</div>
               </div>
             </div>
             <div class="flex items-start gap-2.5 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.04); border:1px solid rgba(34,197,94,0.08)">
               <div class="w-1 h-1 rounded-full bg-lime-300 mt-2 flex-shrink-0"></div>
               <div>
                 <div class="text-[10px] section-eyebrow mb-0.5">Shell Morphology</div>
-                <div class="text-xs leading-relaxed" style="color:rgba(232,245,237,0.7)">Dextral coil, 4–5 whorls. Aragonite matrix requires sustained Ca²⁺ and alkaline pH to prevent dissolution.</div>
+                <div class="text-xs leading-relaxed" style="color:rgba(232,245,237,0.7)">Dextral spiral coil, 4–5 whorls, domed spire. Aragonite biomineral matrix requires sustained Ca²⁺ and alkaline pH &gt;7.0 to prevent dissolution.</div>
               </div>
             </div>
             <div class="flex items-start gap-2.5 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.04); border:1px solid rgba(34,197,94,0.08)">
               <div class="w-1 h-1 rounded-full bg-amber-400 mt-2 flex-shrink-0"></div>
               <div>
                 <div class="text-[10px] section-eyebrow mb-0.5" style="color:rgba(251,191,36,0.6)">Operculum</div>
-                <div class="text-xs leading-relaxed" style="color:rgba(232,245,237,0.7)">Corneous trap-door that seals aperture during dormancy. Detachment = acute physiological distress.</div>
+                <div class="text-xs leading-relaxed" style="color:rgba(232,245,237,0.7)">Corneous trap-door that seals the shell aperture during dormancy. A detached or deflated operculum signals acute physiological distress.</div>
               </div>
             </div>
           </div>
-
           <div class="divider mb-4"></div>
-
-          <!-- Stats row -->
           <div class="grid grid-cols-3 gap-2 text-center">
             <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.1)">
               <div class="data-num text-sm text-lime-300">2in/5cm</div>
@@ -486,19 +455,17 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
           </div>
         </div>
       </div>
-
     </div>
   </div>
-
-  <!-- Bottom fade-to-background -->
   <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-forest-900 to-transparent z-10"></div>
 </section>
 
 
 <!-- ════════════════════════════════════════════
      WIKI CONTENTS INDEX
-     Pill links scroll to each module-XX section.
-     Order MUST match the page module order below.
+     Pills MUST appear in the SAME ORDER as the
+     physical section sequence below (01 → 07).
+     Each data-target must match a section id exactly.
 ═════════════════════════════════════════════ -->
 <nav id="wiki-index" aria-label="Wiki Contents" class="relative py-10 z-10">
   <div class="max-w-7xl mx-auto px-6">
@@ -506,9 +473,7 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
       <div class="section-eyebrow mb-4">Wiki Contents · All Modules</div>
       <div class="flex flex-wrap gap-2" id="wiki-pills">
 
-        <!-- Pills must appear in the same order as the sections below. -->
-        <!-- Each href="#module-XX" must match a section id exactly.   -->
-
+        <!-- 01 · Species Overview -->
         <a href="#module-01" data-target="module-01"
            class="wiki-nav-pill flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
            style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:rgba(134,239,172,0.9)">
@@ -516,13 +481,15 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
           01 · Species Overview
         </a>
 
+        <!-- 02 · Color Morph Index -->
         <a href="#module-02" data-target="module-02"
            class="wiki-nav-pill flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
            style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:rgba(134,239,172,0.9)">
-          <span class="w-1.5 h-1.5 rounded-full" style="background:#4ade80"></span>
+          <span class="w-1.5 h-1.5 rounded-full" style="background:#fbbf24"></span>
           02 · Color Morph Index
         </a>
 
+        <!-- 03 · Beginner Guide -->
         <a href="#module-03" data-target="module-03"
            class="wiki-nav-pill flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
            style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:rgba(134,239,172,0.9)">
@@ -530,6 +497,7 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
           03 · Beginner Guide
         </a>
 
+        <!-- 04 · Tank Compatibility -->
         <a href="#module-04" data-target="module-04"
            class="wiki-nav-pill flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
            style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:rgba(134,239,172,0.9)">
@@ -537,38 +505,38 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
           04 · Tank Compatibility
         </a>
 
+        <!-- 05 · Diet & Daily Care -->
         <a href="#module-05" data-target="module-05"
            class="wiki-nav-pill flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
            style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:rgba(134,239,172,0.9)">
-          <span class="w-1.5 h-1.5 rounded-full" style="background:#f87171"></span>
+          <span class="w-1.5 h-1.5 rounded-full" style="background:#4ade80"></span>
           05 · Diet &amp; Daily Care
         </a>
 
+        <!-- 06 · Breeding & Reproduction -->
         <a href="#module-06" data-target="module-06"
            class="wiki-nav-pill flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
            style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:rgba(134,239,172,0.9)">
-          <span class="w-1.5 h-1.5 rounded-full" style="background:#fbbf24"></span>
+          <span class="w-1.5 h-1.5 rounded-full" style="background:#f472b6"></span>
           06 · Breeding &amp; Reproduction
         </a>
 
+        <!-- 07 · Shell Health & Pathologies -->
         <a href="#module-07" data-target="module-07"
            class="wiki-nav-pill flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
            style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:rgba(134,239,172,0.9)">
-          <span class="w-1.5 h-1.5 rounded-full" style="background:#fbbf24"></span>
+          <span class="w-1.5 h-1.5 rounded-full" style="background:#f87171"></span>
           07 · Shell Health &amp; Pathologies
         </a>
 
-        <!-- ─────────────────────────────────────────
-             TEMPLATE — copy to add modules 08–40:
-
+        <!-- TEMPLATE — copy block below to add modules 08–40:
         <a href="#module-08" data-target="module-08"
            class="wiki-nav-pill flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono"
            style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); color:rgba(134,239,172,0.9)">
           <span class="w-1.5 h-1.5 rounded-full" style="background:#22c55e"></span>
           08 · Your Module Title
         </a>
-        ───────────────────────────────────────── -->
-
+        -->
       </div>
     </div>
   </div>
@@ -577,723 +545,1113 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
 
 <!-- ════════════════════════════════════════════
      MODULE 01 — SPECIES OVERVIEW
-     Content: What is a Mystery Snail, Natural Habitat,
-              Hobbyist Friendliness, Water Parameter Reference
+     Taxonomy, anatomy, natural habitat, hobbyist
+     suitability rating, key biological structures
 ═════════════════════════════════════════════ -->
 <section id="module-01" class="relative py-20">
-  <div class="max-w-7xl mx-auto px-6">
+<div class="max-w-7xl mx-auto px-6">
 
-    <!-- Module header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-      <div>
-        <div class="module-label mb-1">Module 01 · Species Introduction</div>
-        <h2 class="font-mono mt-1" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.02em;">Species Overview</h2>
-      </div>
-      <div class="flex flex-wrap gap-2">
-        <span class="chip">Difficulty: Beginner → Intermediate</span>
-        <span class="chip">Tank: 5 Gal / Snail</span>
-      </div>
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+    <div>
+      <div class="module-label mb-1">Module 01 · Taxonomy &amp; Natural History</div>
+      <h2 class="font-mono mt-1" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.02em;">Species Overview</h2>
     </div>
-
-    <!-- 3-column bento: About · Habitat · Friendliness -->
-    <div class="grid lg:grid-cols-[1fr_1fr_300px] gap-4 mb-4">
-
-      <!-- About card -->
-      <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.7); border:1px solid rgba(34,197,94,0.1)">
-        <div class="section-eyebrow mb-1">Basic Introduction</div>
-        <div class="font-mono text-[10px] mb-3" style="color:rgba(34,197,94,0.3)">/mystery-snail-species-overview/</div>
-        <h3 class="font-mono text-lg mb-3" style="color:#e8f5ed; letter-spacing:-0.02em">What Is a Mystery Snail?</h3>
-        <p class="text-sm leading-relaxed mb-4" style="color:rgba(232,245,237,0.6); line-height:1.75;">
-          Mystery Snails (<em>Pomacea diffusa</em>, formerly <em>P. bridgesii</em>) are peaceful freshwater gastropods prized for their active personality, stunning color morphs, and algae-cleaning abilities.
-        </p>
-        <ul class="space-y-2 text-sm" style="color:rgba(232,245,237,0.65); line-height:1.75;">
-          <li class="flex items-start gap-2.5"><span class="timeline-dot mt-1.5 !w-1.5 !h-1.5 !bg-lime-300 !shadow-none flex-shrink-0"></span>Family: Ampullariidae (Apple Snail family)</li>
-          <li class="flex items-start gap-2.5"><span class="timeline-dot mt-1.5 !w-1.5 !h-1.5 !bg-lime-300 !shadow-none flex-shrink-0"></span>Origin: South America, Amazon River basin</li>
-          <li class="flex items-start gap-2.5"><span class="timeline-dot mt-1.5 !w-1.5 !h-1.5 !bg-lime-300 !shadow-none flex-shrink-0"></span>Breathing: Both gills (aquatic) + lung (aerial)</li>
-          <li class="flex items-start gap-2.5"><span class="timeline-dot mt-1.5 !w-1.5 !h-1.5 !bg-lime-300 !shadow-none flex-shrink-0"></span>Unique: Lays eggs above waterline — no other aquatic snail does this</li>
-        </ul>
-      </div>
-
-      <!-- Habitat card -->
-      <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.7); border:1px solid rgba(34,197,94,0.1)">
-        <div class="section-eyebrow mb-3">Habitat Profile</div>
-        <h3 class="font-mono text-lg mb-3" style="color:#e8f5ed; letter-spacing:-0.02em">Natural Environment</h3>
-        <p class="text-sm leading-relaxed mb-4" style="color:rgba(232,245,237,0.6); line-height:1.75;">
-          In the wild, mystery snails inhabit slow-moving rivers, ponds, and marshes with dense vegetation. They're highly adaptable but thrive in warm, moderately hard water.
-        </p>
-        <div class="grid grid-cols-2 gap-2">
-          <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
-            <div class="text-[10px] section-eyebrow mb-1">Substrate</div>
-            <div class="text-sm" style="color:rgba(232,245,237,0.8)">Fine sand or bare bottom</div>
-          </div>
-          <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
-            <div class="text-[10px] section-eyebrow mb-1">Plants</div>
-            <div class="text-sm" style="color:rgba(232,245,237,0.8)">Hardy species only (Java Fern, Anubias)</div>
-          </div>
-          <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
-            <div class="text-[10px] section-eyebrow mb-1">Lighting</div>
-            <div class="text-sm" style="color:rgba(232,245,237,0.8)">Moderate, promotes algae growth</div>
-          </div>
-          <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
-            <div class="text-[10px] section-eyebrow mb-1">Flow</div>
-            <div class="text-sm" style="color:rgba(232,245,237,0.8)">Low to moderate current</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hobbyist friendliness card -->
-      <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.7); border:1px solid rgba(34,197,94,0.1)">
-        <div class="section-eyebrow mb-3">Hobbyist Friendliness</div>
-        <div class="flex items-center gap-3 mb-4">
-          <div class="relative w-16 h-16 flex-shrink-0">
-            <svg class="ring-svg w-full h-full" viewBox="0 0 48 48">
-              <circle class="ring-track" cx="24" cy="24" r="22"/>
-              <circle class="ring-fill" cx="24" cy="24" r="22" style="stroke-dashoffset:28"/>
-            </svg>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <span class="data-num text-sm text-lime-300">80%</span>
-            </div>
-          </div>
-          <div>
-            <div class="font-mono text-base" style="color:#e8f5ed; letter-spacing:-0.02em">Highly Beginner Friendly</div>
-            <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5)">Hardier than most invertebrates</div>
-          </div>
-        </div>
-        <ul class="space-y-2 text-sm" style="color:rgba(232,245,237,0.65); line-height:1.75;">
-          <li class="flex gap-2"><span class="text-lime-300">✓</span>Do not harm fish or live plants</li>
-          <li class="flex gap-2"><span class="text-lime-300">✓</span>Safe for most community tanks</li>
-          <li class="flex gap-2"><span class="text-lime-300">✓</span>Controlled breeding (unlike pond snails)</li>
-          <li class="flex gap-2"><span class="text-amber-400">!</span>Need a tight lid — escape artists</li>
-          <li class="flex gap-2"><span class="text-amber-400">!</span>Sensitive to copper in any form</li>
-        </ul>
-      </div>
-    </div><!-- /3-col grid -->
-
+    <div class="flex flex-wrap gap-2">
+      <span class="chip">Class: Gastropoda</span>
+      <span class="chip">Order: Architaenioglossa</span>
+      <span class="chip">Family: Ampullariidae</span>
+    </div>
   </div>
-</section><!-- /module-01 --><section id="module-02" class="relative py-20">
-  <div class="max-w-7xl mx-auto px-6">
 
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-      <div>
-        <div class="module-label mb-1">Module 02 · Color Morph Index</div>
-        <h2 class="font-mono mt-1" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.02em;">Color Morph Index</h2>
-        <p class="mt-2 text-sm" style="color:rgba(232,245,237,0.5)">A complete catalog of common and rare color morphs in the hobby.</p>
-      </div>
-      <a href="#module-02" class="text-xs flex items-center gap-1 text-lime-300 hover:text-lime-200 transition-colors whitespace-nowrap">
-        See All 24 Morphs
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+  <!-- 3-column bento: Identity · Anatomy · Suitability -->
+  <div class="grid lg:grid-cols-[1fr_1fr_300px] gap-4 mb-4">
+
+    <!-- Identity & Natural History card -->
+    <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.7); border:1px solid rgba(34,197,94,0.1)">
+      <div class="section-eyebrow mb-3">Taxonomic Identity</div>
+      <h3 class="font-mono text-lg mb-3" style="color:#e8f5ed; letter-spacing:-0.02em">What Is a Mystery Snail?</h3>
+      <p class="text-sm leading-relaxed mb-4" style="color:rgba(232,245,237,0.6); line-height:1.8;">
+        <em>Pomacea diffusa</em> (Blume, 1957), long misidentified in the hobby as <em>P. bridgesii</em>, is a freshwater gastropod mollusc of the family Ampullariidae — the "Apple Snails." Unlike its invasive cousin <em>P. canaliculata</em>, <em>P. diffusa</em> poses negligible risk to healthy aquatic plants, which makes it uniquely suited to planted aquaria. The common name "Mystery Snail" arose because early aquarists could not explain how juveniles appeared in sealed tanks, years before its above-waterline egg-laying biology was described.
+      </p>
+      <ul class="space-y-2 text-sm" style="color:rgba(232,245,237,0.65); line-height:1.8;">
+        <li class="flex items-start gap-2.5"><span class="timeline-dot mt-1.5 !w-1.5 !h-1.5 !bg-lime-300 !shadow-none flex-shrink-0"></span><strong class="text-lime-300">Family:</strong> Ampullariidae — approximately 150 freshwater species globally distributed across tropical South America, Africa, and Asia</li>
+        <li class="flex items-start gap-2.5"><span class="timeline-dot mt-1.5 !w-1.5 !h-1.5 !bg-lime-300 !shadow-none flex-shrink-0"></span><strong class="text-lime-300">Range:</strong> Bolivia, Brazil, Peru; slow-moving rivers, floodplain lakes, and marshes of the Amazon and Paraná drainage basins</li>
+        <li class="flex items-start gap-2.5"><span class="timeline-dot mt-1.5 !w-1.5 !h-1.5 !bg-lime-300 !shadow-none flex-shrink-0"></span><strong class="text-lime-300">Respiration:</strong> Bimodal — uses a ctenidium gill for dissolved-oxygen extraction in water, plus a vascularised pallial lung accessed via an extensible siphon for aerial breathing at the surface</li>
+        <li class="flex items-start gap-2.5"><span class="timeline-dot mt-1.5 !w-1.5 !h-1.5 !bg-lime-300 !shadow-none flex-shrink-0"></span><strong class="text-lime-300">Unique trait:</strong> Only freshwater aquarium snail known to deposit calcified egg clutches entirely above the waterline, requiring humid aerial conditions for successful incubation</li>
+        <li class="flex items-start gap-2.5"><span class="timeline-dot mt-1.5 !w-1.5 !h-1.5 !bg-lime-300 !shadow-none flex-shrink-0"></span><strong class="text-lime-300">Sex:</strong> Strictly dioecious — biologically separate males and females; no hermaphroditism; cannot self-fertilize</li>
+        <li class="flex items-start gap-2.5"><span class="timeline-dot mt-1.5 !w-1.5 !h-1.5 !bg-lime-300 !shadow-none flex-shrink-0"></span><strong class="text-lime-300">Diet:</strong> Detritivore-herbivore; grazes periphytic biofilm, decaying organic matter, soft algae, and blanched vegetables; does not attack living rooted aquatic plants</li>
+      </ul>
     </div>
 
-    <!-- 4-column variety grid -->
+    <!-- External anatomy card -->
+    <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.7); border:1px solid rgba(34,197,94,0.1)">
+      <div class="section-eyebrow mb-3">Anatomical Reference</div>
+      <h3 class="font-mono text-lg mb-3" style="color:#e8f5ed; letter-spacing:-0.02em">External Anatomy</h3>
+      <p class="text-sm leading-relaxed mb-4" style="color:rgba(232,245,237,0.6); line-height:1.8;">
+        Familiarity with the key external structures of <em>P. diffusa</em> is essential for health monitoring, sexing, and recognising early signs of pathology.
+      </p>
+      <div class="space-y-3">
+        <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
+          <div class="text-[10px] section-eyebrow mb-1">Operculum</div>
+          <div class="text-sm" style="color:rgba(232,245,237,0.8); line-height:1.75;">A rigid corneous disc attached to the dorsal surface of the foot. When the snail retracts into its shell, the operculum seals the aperture, protecting soft tissue from desiccation and predators. A healthy operculum is firm, flush with the shell lip, and free of cracks. A sunken, loose, or detached operculum is the primary clinical indicator of severe physiological stress — often indicating ammonia poisoning, advanced calcium deficiency, or imminent death.</div>
+        </div>
+        <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
+          <div class="text-[10px] section-eyebrow mb-1">Siphon</div>
+          <div class="text-sm" style="color:rgba(232,245,237,0.8); line-height:1.75;">An extendable muscular tube on the left side of the head, derived from the mantle margin. The snail extends the siphon above the water surface to draw atmospheric air into the pallial lung cavity. Siphon extension frequency increases in warm water with reduced dissolved oxygen, in response to poor aeration, or during pre-oviposition behaviour when females ascend the tank walls. Repeated frantic siphoning without surfacing may indicate dangerous ammonia levels.</div>
+        </div>
+        <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
+          <div class="text-[10px] section-eyebrow mb-1">Tentacles &amp; Eyes</div>
+          <div class="text-sm" style="color:rgba(232,245,237,0.8); line-height:1.75;">Two pairs of cephalic tentacles: a long upper pair (chemoreceptors and mechanoreceptors) and a shorter lower pair flanking the mouth. The eyes sit on short immobile stalks at the base of the upper tentacles — not at the tips. Tentacle nipping by tank mates is a common injury; partial regrowth is possible over 2–4 weeks if the stalk base is intact.</div>
+        </div>
+        <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
+          <div class="text-[10px] section-eyebrow mb-1">Shell Structure</div>
+          <div class="text-sm" style="color:rgba(232,245,237,0.8); line-height:1.75;">Dextrally coiled with 4–5 whorls, a blunt apex, and a wide umbilicus. The shell layers from outer to inner: periostracum (organic protein layer — provides colour and erosion protection), prismatic layer (calcite crystals), and nacreous layer (aragonite — primary structural strength). All three layers require adequate Ca²⁺, HCO₃⁻, and alkaline pH for correct biomineral deposition.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hobbyist suitability card -->
+    <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.7); border:1px solid rgba(34,197,94,0.1)">
+      <div class="section-eyebrow mb-3">Hobbyist Suitability Index</div>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="relative w-16 h-16 flex-shrink-0">
+          <svg class="ring-svg w-full h-full" viewBox="0 0 48 48">
+            <circle class="ring-track" cx="24" cy="24" r="22"/>
+            <circle class="ring-fill" cx="24" cy="24" r="22" style="stroke-dashoffset:28"/>
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="data-num text-sm text-lime-300">80%</span>
+          </div>
+        </div>
+        <div>
+          <div class="font-mono text-base" style="color:#e8f5ed; letter-spacing:-0.02em">Highly Beginner Suitable</div>
+          <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5)">Hardier than most invertebrates</div>
+        </div>
+      </div>
+      <ul class="space-y-2 text-sm" style="color:rgba(232,245,237,0.65); line-height:1.8;">
+        <li class="flex gap-2 items-start"><span class="text-lime-300 flex-shrink-0">✓</span>Will not consume healthy, rooted aquatic plants — safe for planted tanks</li>
+        <li class="flex gap-2 items-start"><span class="text-lime-300 flex-shrink-0">✓</span>Compatible with most peaceful community fish species</li>
+        <li class="flex gap-2 items-start"><span class="text-lime-300 flex-shrink-0">✓</span>Controlled reproduction — egg clutches are deposited above the waterline and easily removed before hatching</li>
+        <li class="flex gap-2 items-start"><span class="text-lime-300 flex-shrink-0">✓</span>Diurnal activity pattern — active and observable during daylight hours</li>
+        <li class="flex gap-2 items-start"><span class="text-lime-300 flex-shrink-0">✓</span>Effective algae scavengers; significantly reduces glass algae and detritus accumulation</li>
+        <li class="flex gap-2 items-start"><span class="text-amber-400 flex-shrink-0">!</span>Requires a tightly fitting lid — adept climbers that escape from open tanks, especially at night</li>
+        <li class="flex gap-2 items-start"><span class="text-amber-400 flex-shrink-0">!</span>Acutely sensitive to dissolved copper at any detectable concentration — all medications must be copper-free</li>
+        <li class="flex gap-2 items-start"><span class="text-amber-400 flex-shrink-0">!</span>High bioload per individual — robust biological filtration is mandatory before introduction</li>
+      </ul>
+    </div>
+  </div><!-- /3-col grid -->
+
+  <!-- Natural habitat full-width card -->
+  <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.7); border:1px solid rgba(34,197,94,0.1)">
+    <div class="flex items-center justify-between mb-5">
+      <div>
+        <div class="section-eyebrow mb-1">Biogeography &amp; Ecology</div>
+        <h3 class="font-mono text-lg" style="letter-spacing:-0.02em">Natural Habitat Profile</h3>
+      </div>
+      <span class="chip">South America · Freshwater</span>
+    </div>
+    <div class="grid md:grid-cols-4 gap-3 mb-4">
+      <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
+        <div class="text-[10px] section-eyebrow mb-1">Water Body</div>
+        <div class="text-sm font-600 text-lime-300 mb-1">Lentic &amp; Slow Lotic</div>
+        <div class="text-xs" style="color:rgba(232,245,237,0.6); line-height:1.7;">Floodplain lakes, oxbow pools, marshes, irrigation canals, and river margins — all characterised by very low to no current, high turbidity, and seasonal fluctuations in water level.</div>
+      </div>
+      <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
+        <div class="text-[10px] section-eyebrow mb-1">Substrate</div>
+        <div class="text-sm font-600 text-lime-300 mb-1">Fine Silt / Organic Mud</div>
+        <div class="text-xs" style="color:rgba(232,245,237,0.6); line-height:1.7;">Soft silty or muddy bottoms rich in decaying organic matter. In captivity, fine-grain inert substrates such as pool filter sand or Fluval Stratum are recommended; coarse gravel risks operculum damage during locomotion.</div>
+      </div>
+      <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
+        <div class="text-[10px] section-eyebrow mb-1">Vegetation</div>
+        <div class="text-sm font-600 text-lime-300 mb-1">Dense Macrophytes</div>
+        <div class="text-xs" style="color:rgba(232,245,237,0.6); line-height:1.7;">Dense emergent and submerged macrophyte beds including wild-type relatives of Java Fern, Hornwort, and Vallisneria. Plants provide biofilm surfaces for grazing, shaded refugia, and elevated launch points for oviposition.</div>
+      </div>
+      <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
+        <div class="text-[10px] section-eyebrow mb-1">Dry Season</div>
+        <div class="text-sm font-600 text-lime-300 mb-1">Aestivation Capable</div>
+        <div class="text-xs" style="color:rgba(232,245,237,0.6); line-height:1.7;">During drought, seals the aperture with a calcareous epiphragm and burrows into moist substrate, entering a metabolically depressed dormancy. This adaptation explains the snail's remarkable tolerance of accidental desiccation in captivity.</div>
+      </div>
+    </div>
+    <p class="text-sm" style="color:rgba(232,245,237,0.55); line-height:1.8;">
+      Wild <em>P. diffusa</em> populations experience pronounced wet/dry seasonal cycles with water temperatures ranging 22–30 °C, pH 6.8–7.6, moderate general hardness (6–14 dGH), and minimal water movement. In captivity, targeting the upper end of these ranges — pH 7.4–7.8, GH 12–18 dGH, temperature 25–28 °C — provides optimal conditions for shell integrity, immune function, and reproductive fitness. The natural detritus-rich diet is approximated in captivity through a combination of biofilm cultivation, blanched vegetables, spirulina-based supplements, and calcium-rich supplementation such as cuttlebone.
+    </p>
+  </div>
+
+</div>
+</section>
+<!-- ════════ END MODULE 01 ════════ -->
+
+
+<!-- ════════════════════════════════════════════
+     MODULE 02 — COLOR MORPH INDEX
+     Genetic basis of shell/body pigmentation,
+     inheritance patterns, documented morph gallery
+     with phenotype descriptions and rarity ratings
+═════════════════════════════════════════════ -->
+<section id="module-02" class="relative py-20">
+<div class="max-w-7xl mx-auto px-6">
+
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+    <div>
+      <div class="module-label mb-1">Module 02 · Phenotypic Genetics</div>
+      <h2 class="font-mono mt-1" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.02em;">Color Morph Index</h2>
+      <p class="mt-2 text-sm" style="color:rgba(232,245,237,0.5); line-height:1.75;">Shell and body colour in <em>Pomacea diffusa</em> are controlled by at least three independently assorting genetic loci governing periostracum pigmentation, whorl banding, and soft-tissue (foot + mantle) colour.</p>
+    </div>
+    <a href="#module-02" class="text-xs flex items-center gap-1 text-lime-300 hover:text-lime-200 transition-colors whitespace-nowrap">
+      24+ Documented Morphs
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <!-- Genetics overview card -->
+  <div class="bento-card card-glow rounded-2xl p-6 mb-4" style="background:rgba(15,38,20,0.7); border:1px solid rgba(34,197,94,0.1)">
+    <div class="section-eyebrow mb-4">Genetic Architecture of Colour Expression</div>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="rounded-xl p-4" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
+        <div class="text-[10px] section-eyebrow mb-2">Locus A — Shell Base Colour</div>
+        <div class="text-sm font-600 text-lime-300 mb-2">Periostracum Pigmentation</div>
+        <div class="text-xs" style="color:rgba(232,245,237,0.65); line-height:1.8;">The outermost shell layer (periostracum) contains melanin and/or carotenoid pigments deposited by the mantle epithelium. Wild-type alleles produce dark melanin, yielding brown to olive base colours. Recessive loss-of-function alleles reduce or eliminate melanin: heterozygotes often show lighter brown; homozygous recessives produce yellow (carotenoid-dominant) or white (no pigment). Blue morphs appear to arise from structural interference colouration in the prismatic calcite layer beneath a nearly depigmented periostracum.</div>
+      </div>
+      <div class="rounded-xl p-4" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
+        <div class="text-[10px] section-eyebrow mb-2">Locus B — Banding Pattern</div>
+        <div class="text-sm font-600 text-lime-300 mb-2">Spiral Whorl Striping</div>
+        <div class="text-xs" style="color:rgba(232,245,237,0.65); line-height:1.8;">A second independently assorting locus controls whether the shell displays dark spiral bands along the whorl sutures. In wild populations, striped patterns predominate and likely provide camouflage against predation. In captive-bred lineages, selective pressure for solid-colour morphs has made banded individuals less common but they still appear regularly in mixed-lineage crosses. Banding is inherited in a pattern consistent with incomplete dominance — heterozygotes often show faint or partial banding.</div>
+      </div>
+      <div class="rounded-xl p-4" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
+        <div class="text-[10px] section-eyebrow mb-2">Locus C — Body/Foot Colour</div>
+        <div class="text-sm font-600 text-lime-300 mb-2">Soft-Tissue Pigmentation</div>
+        <div class="text-xs" style="color:rgba(232,245,237,0.65); line-height:1.8;">The foot, mantle, head, and tentacles carry a completely independent melanin system from the shell periostracum. Dark-bodied morphs have melanin-saturated epidermis (dark grey to nearly black); ivory-bodied morphs are recessive at this locus and express cream-to-white soft tissue. Because shell colour and body colour are genetically independent, the combination of any shell morph with any body colour is theoretically possible — yielding the desirable "Gold Ivory" (yellow shell + white body) or dramatic "Black Ivory" (black shell + white foot) phenotypes.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Morph gallery row 1 -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+
+    <!-- Ivory / White -->
+    <div class="bento-card rounded-2xl overflow-hidden cursor-pointer" style="border:1px solid rgba(34,197,94,0.1)">
+      <div class="relative aspect-square overflow-hidden">
+        <img src="images/IvoryWhite.png" alt="Ivory White mystery snail" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-forest-900 via-transparent to-transparent opacity-80"></div>
+        <div class="absolute top-2 left-2"><span class="chip text-[10px]">COMMON</span></div>
+      </div>
+      <div class="p-4" style="background:rgba(15,38,20,0.9)">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-3 h-3 rounded-full bg-white border border-slate-400 flex-shrink-0"></span>
+          <h4 class="font-mono text-sm" style="color:#e8f5ed; letter-spacing:-0.01em">Arctic Ivory / White</h4>
+        </div>
+        <p class="text-xs leading-relaxed mt-1" style="color:rgba(232,245,237,0.5); line-height:1.7;">Complete melanin suppression at both shell and body loci yields a brilliant snow-white shell with cream-ivory soft tissue. The periostracum is thin and lacks melanin entirely. Because the protective periostracum is reduced, Ivory morphs are more vulnerable to mild acid exposure — even brief dips to pH 6.8 cause visible periostracum etching and surface roughening faster than in darker morphs whose thicker periostracum buffers early dissolution.</p>
+      </div>
+    </div>
+
+    <!-- Gold / Yellow -->
+    <div class="bento-card rounded-2xl overflow-hidden cursor-pointer" style="border:1px solid rgba(34,197,94,0.1)">
+      <div class="relative aspect-square overflow-hidden">
+        <img src="images/GoldYellow.png" alt="Gold Yellow mystery snail" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-forest-900 via-transparent to-transparent opacity-80"></div>
+        <div class="absolute top-2 left-2"><span class="chip text-[10px]">VERY COMMON</span></div>
+      </div>
+      <div class="p-4" style="background:rgba(15,38,20,0.9)">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-3 h-3 rounded-full bg-yellow-400 flex-shrink-0"></span>
+          <h4 class="font-mono text-sm" style="color:#e8f5ed; letter-spacing:-0.01em">Gold / Yellow</h4>
+        </div>
+        <p class="text-xs leading-relaxed mt-1" style="color:rgba(232,245,237,0.5); line-height:1.7;">Reduced melanin deposition with carotenoid pigments dominating the periostracum produces saturated lemon-to-amber shells. The "Gold Ivory" variant — yellow shell paired with white soft tissue — is commercially the most popular morph. Shell intensity varies significantly with diet; spirulina and astaxanthin-rich foods intensify colouration. New growth at the aperture edge serves as a real-time colour-health indicator: vivid new whorls confirm adequate nutrition and stable water chemistry.</p>
+      </div>
+    </div>
+
+    <!-- Purple / Violet -->
+    <div class="bento-card rounded-2xl overflow-hidden cursor-pointer" style="border:1px solid rgba(34,197,94,0.1)">
+      <div class="relative aspect-square overflow-hidden">
+        <img src="images/PurpleViolet.png" alt="Purple Violet mystery snail" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-forest-900 via-transparent to-transparent opacity-80"></div>
+        <div class="absolute top-2 left-2"><span class="chip text-[10px]">RARE</span></div>
+      </div>
+      <div class="p-4" style="background:rgba(15,38,20,0.9)">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-3 h-3 rounded-full bg-purple-500 flex-shrink-0"></span>
+          <h4 class="font-mono text-sm" style="color:#e8f5ed; letter-spacing:-0.01em">Purple / Violet</h4>
+        </div>
+        <p class="text-xs leading-relaxed mt-1" style="color:rgba(232,245,237,0.5); line-height:1.7;">True purple morphs are among the most genetically complex colour expressions in <em>P. diffusa</em>. The deep violet hue arises from a combination of partial melanin reduction and an as-yet uncharacterised structural colouration effect in the calcite layer. Pure purple-to-purple crosses frequently throw mixed offspring including lavender, ivory, and brown variants — confirming a multi-locus recessive architecture. Colour intensity is highly pH-dependent: specimens kept below pH 7.0 show dramatic fading as periostracum erosion strips the surface pigment layer.</p>
+      </div>
+    </div>
+
+    <!-- Blue -->
+    <div class="bento-card rounded-2xl overflow-hidden cursor-pointer" style="border:1px solid rgba(34,197,94,0.1)">
+      <div class="relative aspect-square overflow-hidden">
+        <img src="images/Blue.png" alt="Blue mystery snail" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-forest-900 via-transparent to-transparent opacity-80"></div>
+        <div class="absolute top-2 left-2"><span class="chip chip-warn text-[10px]">VERY RARE</span></div>
+      </div>
+      <div class="p-4" style="background:rgba(15,38,20,0.9)">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-3 h-3 rounded-full bg-sky-400 flex-shrink-0"></span>
+          <h4 class="font-mono text-sm" style="color:#e8f5ed; letter-spacing:-0.01em">Blue / Powder Blue</h4>
+        </div>
+        <p class="text-xs leading-relaxed mt-1" style="color:rgba(232,245,237,0.5); line-height:1.7;">The rarest phenotype in the hobby. True blue colouration requires a nearly depigmented periostracum over a calcite prismatic layer with specific optical properties — likely structural colouration analogous to thin-film interference. Most "blue" specimens sold commercially are pale lavender or greyish-white mislabelled. Genuine blue morphs are exquisitely sensitive to water quality; pH drops below 7.2 cause irreversible periostracum erosion that permanently alters the optical surface producing the blue effect. Not recommended for beginners.</p>
+      </div>
+    </div>
+  </div><!-- /row 1 -->
+
+  <!-- Morph gallery row 2 -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+
+    <!-- Jade Green -->
+    <div class="bento-card rounded-2xl overflow-hidden cursor-pointer" style="border:1px solid rgba(34,197,94,0.1)">
+      <div class="relative aspect-square overflow-hidden">
+        <img src="images/JadeGreen.png" alt="Jade Green mystery snail" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-forest-900 via-transparent to-transparent opacity-80"></div>
+        <div class="absolute top-2 left-2"><span class="chip text-[10px]">UNCOMMON</span></div>
+      </div>
+      <div class="p-4" style="background:rgba(15,38,20,0.9)">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-3 h-3 rounded-full bg-emerald-500 flex-shrink-0"></span>
+          <h4 class="font-mono text-sm" style="color:#e8f5ed; letter-spacing:-0.01em">Jade / Olive Green</h4>
+        </div>
+        <p class="text-xs leading-relaxed mt-1" style="color:rgba(232,245,237,0.5); line-height:1.7;">Jade morphs arise from co-expression of residual melanin and carotenoid pigments in roughly equal proportion, producing warm olive-to-sage green shells. The intensity of green colouration is strongly diet-responsive — spirulina, chlorella, and green-vegetable feeding significantly deepen and maintain colour saturation. Distinguished from wild-type olive-brown by higher carotenoid : melanin ratio and typically absent banding. Pairs well with dark-body variants for maximum visual contrast in aquascaping.</p>
+      </div>
+    </div>
+
+    <!-- Chocolate Brown -->
+    <div class="bento-card rounded-2xl overflow-hidden cursor-pointer" style="border:1px solid rgba(34,197,94,0.1)">
+      <div class="relative aspect-square overflow-hidden">
+        <img src="images/ChocolateBrown.png" alt="Chocolate Brown mystery snail" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-forest-900 via-transparent to-transparent opacity-80"></div>
+        <div class="absolute top-2 left-2"><span class="chip text-[10px]">COMMON</span></div>
+      </div>
+      <div class="p-4" style="background:rgba(15,38,20,0.9)">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-3 h-3 rounded-full bg-amber-900 flex-shrink-0"></span>
+          <h4 class="font-mono text-sm" style="color:#e8f5ed; letter-spacing:-0.01em">Chocolate Brown</h4>
+        </div>
+        <p class="text-xs leading-relaxed mt-1" style="color:rgba(232,245,237,0.5); line-height:1.7;">Moderate-to-high melanin expression with low carotenoid overlay produces the rich warm-brown "chocolate" phenotype. Arguably closest to the ancestral wild-type colouration, these snails tend to have the thickest periostracum of all commonly kept morphs — conferring the greatest resistance to mild acid erosion and offering a useful observational benchmark for health-monitoring comparisons. The foot is typically dark, and the mantle margin often displays subtle iridescence under direct illumination.</p>
+      </div>
+    </div>
+
+    <!-- Midnight Black -->
+    <div class="bento-card rounded-2xl overflow-hidden cursor-pointer" style="border:1px solid rgba(34,197,94,0.1)">
+      <div class="relative aspect-square overflow-hidden">
+        <img src="images/MidnightBlack.png" alt="Midnight Black mystery snail" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-forest-900 via-transparent to-transparent opacity-80"></div>
+        <div class="absolute top-2 left-2"><span class="chip text-[10px]">UNCOMMON</span></div>
+      </div>
+      <div class="p-4" style="background:rgba(15,38,20,0.9)">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-3 h-3 rounded-full bg-neutral-900 border border-neutral-600 flex-shrink-0"></span>
+          <h4 class="font-mono text-sm" style="color:#e8f5ed; letter-spacing:-0.01em">Midnight Black</h4>
+        </div>
+        <p class="text-xs leading-relaxed mt-1" style="color:rgba(232,245,237,0.5); line-height:1.7;">Maximum melanin expression at both shell and body loci produces near-black shells with correspondingly dark soft tissue. Juveniles of black morphs are often born with a lighter caramel-brown shell that progressively darkens over 4–8 weeks as melanin deposition matures — a phenotypic shift that sometimes startles new hobbyists. The opaque, melanin-dense periostracum is highly resistant to acid erosion, making black morphs among the most structurally resilient in challenging water conditions.</p>
+      </div>
+    </div>
+
+    <!-- Magenta / Pink -->
+    <div class="bento-card rounded-2xl overflow-hidden cursor-pointer" style="border:1px solid rgba(34,197,94,0.1)">
+      <div class="relative aspect-square overflow-hidden">
+        <img src="images/MagentaPink.png" alt="Magenta Pink mystery snail" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-forest-900 via-transparent to-transparent opacity-80"></div>
+        <div class="absolute top-2 left-2"><span class="chip text-[10px]">RARE</span></div>
+      </div>
+      <div class="p-4" style="background:rgba(15,38,20,0.9)">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-3 h-3 rounded-full bg-pink-500 flex-shrink-0"></span>
+          <h4 class="font-mono text-sm" style="color:#e8f5ed; letter-spacing:-0.01em">Magenta / Pink</h4>
+        </div>
+        <p class="text-xs leading-relaxed mt-1" style="color:rgba(232,245,237,0.5); line-height:1.7;">A striking rose-to-fuchsia phenotype attributed to specific carotenoid precursor pathways and/or as-yet-uncharacterised pigment modifiers. Colour intensity is strongly nutrition-dependent: specimens fed astaxanthin-rich foods (krill-based pellets, spirulina) maintain vivid hues, while those on low-carotenoid diets fade toward salmon-pink within weeks. New shell growth at the aperture provides the clearest current-health indicator — vibrant new whorls confirm adequate carotenoid intake and stable water chemistry.</p>
+      </div>
+    </div>
+  </div><!-- /row 2 -->
+
+  <!-- Additional morphs strip -->
+  <div class="rounded-2xl p-4 flex flex-wrap items-center gap-3" style="background:rgba(15,38,20,0.6); border:1px solid rgba(34,197,94,0.08)">
+    <span class="text-xs font-mono" style="color:rgba(134,239,172,0.5)">Additional documented morphs:</span>
+    <div class="flex flex-wrap gap-2">
+      <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full" style="background:#c8b880"></span>Golden Ivory</span>
+      <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full bg-lime-600"></span>Jade Ivory</span>
+      <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>Wild-type Olive</span>
+      <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full" style="background:#b8a0d8"></span>Lavender</span>
+      <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full" style="background:#d4a0c8"></span>Lilac</span>
+      <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full" style="background:#e8c8a8"></span>Peach / Cream</span>
+      <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full" style="background:#804000"></span>Dark Chocolate</span>
+      <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full" style="background:#607060"></span>Slate Grey</span>
+      <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full" style="background:#3a6000"></span>Forest Green</span>
+      <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full" style="background:#ffe4b5"></span>Mango Yellow</span>
+    </div>
+  </div>
+
+</div>
+</section>
+<!-- ════════ END MODULE 02 ════════ -->
+
+
+<!-- ════════════════════════════════════════════
+     MODULE 03 — BEGINNER GUIDE
+     Tank cycling, water parameter science, equipment
+     checklist, lid requirements, plant compatibility
+═════════════════════════════════════════════ -->
+<section id="module-03" class="relative py-20">
+<div class="max-w-7xl mx-auto px-6">
+
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+    <div>
+      <div class="module-label mb-1">Module 03 · First-Time Setup</div>
+      <h2 class="font-mono mt-1" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.02em;">Beginner Guide</h2>
+      <p class="mt-2 text-sm" style="color:rgba(232,245,237,0.5); line-height:1.75;">Everything a first-time keeper needs: nitrogen cycle fundamentals, equipment selection, water parameter science, plant selection, and common setup mistakes.</p>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      <span class="chip">Difficulty: Beginner</span>
+      <span class="chip">Min Tank: 5 Gal / Snail</span>
+    </div>
+  </div>
+
+  <!-- Water parameter reference full-width -->
+  <div class="rounded-2xl p-6 mb-4" style="background:rgba(15,38,20,0.7); border:1px solid rgba(34,197,94,0.1)">
+    <div class="flex items-center justify-between mb-6">
+      <div>
+        <div class="section-eyebrow mb-1">Water Chemistry · Complete Reference</div>
+        <div class="font-mono text-[10px]" style="color:rgba(34,197,94,0.3)">/water-parameters-mystery-snail/</div>
+        <h3 class="font-mono text-lg mt-2" style="letter-spacing:-0.02em">Water Parameter Reference</h3>
+      </div>
+      <span class="chip">Parameters · Stable</span>
+    </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 
-      <!-- Lucent Yellow -->
-      <div class="bento-card rounded-2xl overflow-hidden cursor-pointer" style="border:1px solid rgba(34,197,94,0.1)">
-        <div class="relative aspect-square img-placeholder overflow-hidden" style="background:linear-gradient(135deg,#1a1400,#2d2000)">
-          <div class="absolute inset-0 flex items-center justify-center opacity-30">
-            <svg width="80" height="80" viewBox="0 0 80 80"><ellipse cx="40" cy="42" rx="28" ry="25" fill="rgba(234,179,8,0.5)"/><ellipse cx="40" cy="36" rx="14" ry="18" fill="rgba(234,179,8,0.7)"/><circle cx="40" cy="30" r="8" fill="rgba(250,200,0,0.8)"/></svg>
-          </div>
-          <div class="absolute top-2 left-2"><span class="chip text-[10px]">COMMON</span></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-forest-900 via-transparent to-transparent opacity-80"></div>
+      <!-- pH -->
+      <div class="relative rounded-xl p-4 scan-line overflow-hidden" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.12)">
+        <div class="section-eyebrow mb-2 flex items-center gap-1.5">
+          <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#22c55e" fill-opacity="0.6"/></svg>
+          pH Level
         </div>
-        <div class="p-4" style="background:rgba(15,38,20,0.9)">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="w-3 h-3 rounded-full bg-yellow-400 flex-shrink-0"></span>
-            <h4 class="font-mono text-sm" style="color:#e8f5ed; letter-spacing:-0.01em">Lucent Yellow</h4>
-          </div>
-          <p class="text-xs leading-relaxed mt-1" style="color:rgba(232,245,237,0.5); line-height:1.6;">Saturated lemon-gold shell with a cream-white foot. The gold standard — brilliant color and vivid contrast.</p>
-        </div>
+        <div class="data-num text-3xl text-lime-300 mb-1">7.2–7.8</div>
+        <div class="text-xs mb-3" style="color:rgba(134,239,172,0.5); line-height:1.7;">Alkaline pH is essential for shell integrity. Aragonite (CaCO₃) — the primary shell biomineral — begins dissolving chemically at pH below 7.0. Between pH 6.5–7.0, dissolution outpaces mantle secretion, causing thinning and pitting. Target 7.4–7.6 for optimal shell deposition. In CO₂-injected planted tanks, monitor pH constantly as CO₂ injection drives pH down; running CO₂ alongside mystery snails requires careful balancing with KH buffering to prevent pH crash.</div>
+        <div class="param-bar"><div class="param-bar-fill" style="width:65%"></div></div>
       </div>
 
-      <!-- Majestic Violet -->
-      <div class="bento-card rounded-2xl overflow-hidden cursor-pointer" style="border:1px solid rgba(34,197,94,0.1)">
-        <div class="relative aspect-square img-placeholder overflow-hidden" style="background:linear-gradient(135deg,#130f1e,#1e1630)">
-          <div class="absolute inset-0 flex items-center justify-center opacity-30">
-            <svg width="80" height="80" viewBox="0 0 80 80"><ellipse cx="40" cy="42" rx="28" ry="25" fill="rgba(139,92,246,0.5)"/><ellipse cx="40" cy="36" rx="14" ry="18" fill="rgba(139,92,246,0.7)"/><circle cx="40" cy="30" r="8" fill="rgba(167,139,250,0.8)"/></svg>
-          </div>
-          <div class="absolute top-2 left-2"><span class="chip text-[10px]">RARE</span></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-forest-900 via-transparent to-transparent opacity-80"></div>
+      <!-- Temperature -->
+      <div class="relative rounded-xl p-4 overflow-hidden" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.12)">
+        <div class="section-eyebrow mb-2 flex items-center gap-1.5">
+          <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#f59e0b" fill-opacity="0.6"/></svg>
+          Temperature
         </div>
-        <div class="p-4" style="background:rgba(15,38,20,0.9)">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="w-3 h-3 rounded-full bg-purple-500 flex-shrink-0"></span>
-            <h4 class="font-mono text-sm" style="color:#e8f5ed; letter-spacing:-0.01em">Majestic Violet</h4>
-          </div>
-          <p class="text-xs leading-relaxed mt-1" style="color:rgba(232,245,237,0.5); line-height:1.6;">Deep violet-purple shell highly prized in the hobby. Rich iridescent tone; sometimes scarce.</p>
-        </div>
+        <div class="data-num text-3xl text-lime-300 mb-1">68–82°F</div>
+        <div class="text-xs mb-3" style="color:rgba(134,239,172,0.5); line-height:1.7;">Optimal: 25–27 °C (77–81 °F). Warmer water (28 °C+) increases metabolic rate, activity, and growth speed — but also shortens lifespan significantly. Cooler water (22–24 °C) dramatically extends longevity to 2–3+ years. Avoid temperature fluctuations &gt;2 °C within 24 hours, which stress the immune system and trigger temporary feeding cessation. Below 18 °C, snails enter torpor; above 30 °C, fatal heat stress develops within hours.</div>
+        <div class="param-bar"><div class="param-bar-fill" style="width:55%"></div></div>
       </div>
 
-      <!-- Ethereal Blue -->
-      <div class="bento-card rounded-2xl overflow-hidden cursor-pointer" style="border:1px solid rgba(34,197,94,0.1)">
-        <div class="relative aspect-square img-placeholder overflow-hidden" style="background:linear-gradient(135deg,#0a1020,#101828)">
-          <div class="absolute inset-0 flex items-center justify-center opacity-30">
-            <svg width="80" height="80" viewBox="0 0 80 80"><ellipse cx="40" cy="42" rx="28" ry="25" fill="rgba(56,189,248,0.4)"/><ellipse cx="40" cy="36" rx="14" ry="18" fill="rgba(125,211,252,0.6)"/><circle cx="40" cy="30" r="8" fill="rgba(186,230,253,0.8)"/></svg>
-          </div>
-          <div class="absolute top-2 left-2"><span class="chip chip-warn text-[10px]">RARE</span></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-forest-900 via-transparent to-transparent opacity-80"></div>
+      <!-- Hardness -->
+      <div class="relative rounded-xl p-4 overflow-hidden" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.12)">
+        <div class="section-eyebrow mb-2 flex items-center gap-1.5">
+          <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#22c55e" fill-opacity="0.6"/></svg>
+          Hardness GH / KH
         </div>
-        <div class="p-4" style="background:rgba(15,38,20,0.9)">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="w-3 h-3 rounded-full bg-sky-400 flex-shrink-0"></span>
-            <h4 class="font-mono text-sm" style="color:#e8f5ed; letter-spacing:-0.01em">Ethereal Blue</h4>
-          </div>
-          <p class="text-xs leading-relaxed mt-1" style="color:rgba(232,245,237,0.5); line-height:1.6;">As rare as a blue sky in monsoon season. Striking on dark substrates; low supply.</p>
-        </div>
+        <div class="data-num text-3xl text-lime-300 mb-1">12–18 dGH</div>
+        <div class="text-xs mb-3" style="color:rgba(134,239,172,0.5); line-height:1.7;">GH (General Hardness) measures dissolved Ca²⁺ and Mg²⁺ — the direct building blocks of aragonite shell. KH (Carbonate Hardness) buffers pH against acid fluctuations. Minimum viable GH: 8 dGH. Ideal: 14–18 dGH. In soft-water regions, add cuttlebone, crushed coral (in filter media), or commercially prepared mineral supplements. Never use distilled or RO water without re-mineralising — zero GH causes rapid shell dissolution and death within weeks.</div>
+        <div class="param-bar"><div class="param-bar-fill" style="width:72%"></div></div>
       </div>
 
-      <!-- Arctic Ivory -->
-      <div class="bento-card rounded-2xl overflow-hidden cursor-pointer" style="border:1px solid rgba(34,197,94,0.1)">
-        <div class="relative aspect-square img-placeholder overflow-hidden" style="background:linear-gradient(135deg,#141414,#1a1a1a)">
-          <div class="absolute inset-0 flex items-center justify-center opacity-25">
-            <svg width="80" height="80" viewBox="0 0 80 80"><ellipse cx="40" cy="42" rx="28" ry="25" fill="rgba(241,245,249,0.8)"/><ellipse cx="40" cy="36" rx="14" ry="18" fill="rgba(248,250,252,0.9)"/><circle cx="40" cy="30" r="8" fill="white"/></svg>
-          </div>
-          <div class="absolute top-2 left-2"><span class="chip text-[10px]">COMMON</span></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-forest-900 via-transparent to-transparent opacity-80"></div>
+      <!-- Nitrogen -->
+      <div class="relative rounded-xl p-4 overflow-hidden" style="background:rgba(245,158,11,0.04); border:1px solid rgba(245,158,11,0.15)">
+        <div class="section-eyebrow mb-2 flex items-center gap-1.5" style="color:rgba(251,191,36,0.6)">
+          <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#f59e0b" fill-opacity="0.8"/></svg>
+          Nitrogen · Ammonia
         </div>
-        <div class="p-4" style="background:rgba(15,38,20,0.9)">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="w-3 h-3 rounded-full bg-slate-100 border border-slate-400 flex-shrink-0"></span>
-            <h4 class="font-mono text-sm" style="color:#e8f5ed; letter-spacing:-0.01em">Arctic Ivory</h4>
-          </div>
-          <p class="text-xs leading-relaxed mt-1" style="color:rgba(232,245,237,0.5); line-height:1.6;">Snow-white shell with ivory-colored foot. A striking contrasting ornamental trait.</p>
+        <div class="data-num text-3xl mb-1" style="color:#fbbf24">0 ppm</div>
+        <div class="text-xs mb-3" style="color:rgba(251,191,36,0.5); line-height:1.7;">Ammonia (NH₃/NH₄⁺) and nitrite (NO₂⁻) must read 0 ppm at all times. Mystery snails produce significant ammonia relative to body size — a single adult generates bioload comparable to a medium tropical fish. Tank must complete the full nitrogen cycle (typically 4–6 weeks using fishless cycling with ammonia dosing) before snails are introduced. Once established, maintain nitrate (NO₃⁻) below 20 ppm via weekly water changes.</div>
+        <div class="param-bar" style="background:rgba(245,158,11,0.1)">
+          <div class="param-bar-fill" style="width:0%; background:linear-gradient(90deg, #f59e0b, #fbbf24)"></div>
         </div>
-      </div>
-    </div><!-- /variety grid -->
-
-    <!-- Additional morphs pill strip -->
-    <div class="mt-4 rounded-2xl p-4 flex flex-wrap items-center gap-3" style="background:rgba(15,38,20,0.6); border:1px solid rgba(34,197,94,0.08)">
-      <span class="text-xs" style="color:rgba(134,239,172,0.5)">Additional morphs:</span>
-      <div class="flex flex-wrap gap-2">
-        <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full bg-amber-900"></span>Chocolate</span>
-        <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full bg-emerald-700"></span>Jade Green</span>
-        <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full bg-slate-900"></span>Midnight Black</span>
-        <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span>Magenta</span>
-        <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>Wild-type Olive</span>
-        <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full bg-lime-600"></span>Jade Ivory</span>
-        <span class="flex items-center gap-1.5 chip text-[10px]"><span class="w-2.5 h-2.5 rounded-full" style="background:#c8b880"></span>Golden Ivory</span>
       </div>
     </div>
-
   </div>
-</section><!-- /module-02 --><section id="module-03" class="relative py-20">
-  <div class="max-w-7xl mx-auto px-6">
 
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-      <div>
-        <div class="module-label mb-1">Module 03 · Beginner Guide</div>
-        <h2 class="font-mono mt-1" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.02em;">Beginner Guide</h2>
+  <!-- Setup + Plants 2-col -->
+  <div class="grid md:grid-cols-[1.2fr_1fr] gap-4">
+
+    <!-- Setup checklist -->
+    <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.7); border:1px solid rgba(34,197,94,0.1)">
+      <div class="section-eyebrow mb-1">Setup Protocol</div>
+      <h3 class="font-mono text-lg mt-1 mb-4" style="letter-spacing:-0.02em">Tank Setup Checklist</h3>
+      <div class="space-y-3">
+        <label class="flex items-start gap-3 cursor-pointer">
+          <div class="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5" style="background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.3)">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#22c55e" stroke-width="2"><path d="M2 5l2.5 2.5L8 3"/></svg>
+          </div>
+          <span class="text-sm" style="color:rgba(232,245,237,0.75); line-height:1.75;"><strong class="text-lime-300">Minimum 5 US gallons per snail.</strong> A 20-gallon tank for 2–4 adults is ideal — larger volume dilutes ammonia spikes from the high bioload, stabilises temperature, and provides adequate grazing surface area.</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer">
+          <div class="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5" style="background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.3)">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#22c55e" stroke-width="2"><path d="M2 5l2.5 2.5L8 3"/></svg>
+          </div>
+          <span class="text-sm" style="color:rgba(232,245,237,0.75); line-height:1.75;"><strong class="text-lime-300">Complete the nitrogen cycle before adding snails.</strong> Ammonia and nitrite must both read 0 ppm for at least one full week. Use a liquid reagent test kit (e.g. API Master Test Kit) — test strips are unreliable and unsuitable for snail-keeping decisions.</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer">
+          <div class="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5" style="background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.3)">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#22c55e" stroke-width="2"><path d="M2 5l2.5 2.5L8 3"/></svg>
+          </div>
+          <span class="text-sm" style="color:rgba(232,245,237,0.75); line-height:1.75;"><strong class="text-lime-300">Cover all filter intakes with fine sponge prefilters.</strong> Snail juveniles (and even some adults) can be drawn into HOB and canister filter intakes and killed. Pre-filter sponges are mandatory. Sponge filters driven by an air pump are the safest filtration choice for snail-centric setups.</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer">
+          <div class="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5" style="background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.3)">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#22c55e" stroke-width="2"><path d="M2 5l2.5 2.5L8 3"/></svg>
+          </div>
+          <span class="text-sm" style="color:rgba(232,245,237,0.75); line-height:1.75;"><strong class="text-lime-300">Add cuttlebone from day one.</strong> A medium cuttlebone (available at pet stores as a bird supplement) dissolves slowly to release calcium and bicarbonate, passively raising GH and buffering pH. Snails self-regulate consumption by actively gnawing on it. Replace monthly or when fully dissolved.</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer">
+          <div class="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5" style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.15)"></div>
+          <span class="text-sm" style="color:rgba(232,245,237,0.5); line-height:1.75;">Perform weekly 20–30% water changes using a gravel siphon. Temperature-match replacement water within ±1 °C; dechlorinate with a product that neutralises both chlorine and chloramine (e.g. Seachem Prime).</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer">
+          <div class="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5" style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.15)"></div>
+          <span class="text-sm" style="color:rgba(232,245,237,0.5); line-height:1.75;">Inspect and secure the lid before lights-out each evening. Snails are most active and escape-prone between 10 PM and 4 AM. Even a 1 cm gap around equipment cords is sufficient for a determined adult to exit.</span>
+        </label>
       </div>
-      <span class="chip">Water Chemistry · Complete Reference</span>
     </div>
 
-    <!-- Water parameter table — full width, scan-line on pH card -->
-    <div class="rounded-2xl p-6" style="background:rgba(15,38,20,0.7); border:1px solid rgba(34,197,94,0.1)">
-      <div class="flex items-center justify-between mb-6">
+    <!-- Plant compatibility -->
+    <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.7); border:1px solid rgba(34,197,94,0.1)">
+      <div class="section-eyebrow mb-3">Aquatic Plant Compatibility</div>
+      <h3 class="font-mono text-lg mb-3" style="letter-spacing:-0.02em">Safe Plants for Snail Tanks</h3>
+      <p class="text-sm mb-4" style="color:rgba(232,245,237,0.6); line-height:1.8;"><em>P. diffusa</em> does not consume healthy rooted aquatic plants under normal feeding conditions — it grazes periphytic biofilm on leaf surfaces rather than attacking leaf tissue. However, tender-leaved plants can show grazing damage when snails are underfed. The following species are reliably safe and often enhance the snail's environment by providing biofilm surfaces and refugia.</p>
+      <div class="space-y-2">
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.1)">
+          <span class="text-lime-300 text-sm flex-shrink-0">✓</span>
+          <div>
+            <div class="text-sm font-600 text-lime-300">Java Fern (<em>Microsorum pteropus</em>)</div>
+            <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5); line-height:1.6;">Thick, leathery leaves are completely ignored by snails. Excellent biofilm cultivator. Tolerates the same GH and pH range as mystery snails. Attaches to driftwood or rocks — does not require substrate planting.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.1)">
+          <span class="text-lime-300 text-sm flex-shrink-0">✓</span>
+          <div>
+            <div class="text-sm font-600 text-lime-300">Anubias spp. (all varieties)</div>
+            <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5); line-height:1.6;">Thick, waxy leaves with an unpalatable surface texture. Prefers shaded conditions. The broad leaf surfaces of <em>Anubias barteri</em> accumulate algae biofilm that snails eagerly graze — providing natural nutrition while keeping the plant surface clean.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.1)">
+          <span class="text-lime-300 text-sm flex-shrink-0">✓</span>
+          <div>
+            <div class="text-sm font-600 text-lime-300">Dwarf Sagittaria (<em>Sagittaria subulata</em>)</div>
+            <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5); line-height:1.6;">Slender grass-like leaves form dense foreground carpets that snails navigate easily. Grows readily in the hard-water conditions ideal for mystery snails. Provides useful ground-level cover and biofilm surface area.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.1)">
+          <span class="text-lime-300 text-sm flex-shrink-0">✓</span>
+          <div>
+            <div class="text-sm font-600 text-lime-300">Vallisneria spp. / Java Moss / Hornwort</div>
+            <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5); line-height:1.6;">Vallisneria spiralis and V. americana are hard-water loving and fully compatible. Java moss accumulates biofilm across its entire surface area. Hornwort (Ceratophyllum demersum) provides oxygenation and dense floating refuge, though snails occasionally graze algae from its fine needle-like leaves.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /2-col grid -->
+
+</div>
+</section>
+<!-- ════════ END MODULE 03 ════════ -->
+
+
+<!-- ════════════════════════════════════════════
+     MODULE 04 — TANK COMPATIBILITY
+     Species-level threat assessment: safe mates,
+     dangerous species, individual-dependent species,
+     invertebrate cohabitation
+═════════════════════════════════════════════ -->
+<section id="module-04" class="relative py-20">
+<div class="max-w-7xl mx-auto px-6">
+
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+    <div>
+      <div class="module-label mb-1">Module 04 · Ecosystem Integration</div>
+      <h2 class="font-mono mt-1" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.02em;">Tank Compatibility</h2>
+      <p class="mt-2 text-sm" style="color:rgba(232,245,237,0.5); line-height:1.75;">Compatibility must be evaluated across three independent threat vectors: direct shell-crushing predation, opportunistic soft-tissue nipping, and chemical toxicity from medications or water additives.</p>
+    </div>
+    <span class="chip">Predator Risk Assessment</span>
+  </div>
+
+  <div class="grid md:grid-cols-[1fr_1fr] gap-4 mb-4">
+
+    <!-- Safe tank mates -->
+    <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.8); border:1px solid rgba(34,197,94,0.12)">
+      <div class="section-eyebrow mb-3">Compatible Species · Verified Safe</div>
+      <h3 class="font-mono text-lg mb-4" style="letter-spacing:-0.02em">Safe Tank Mates</h3>
+      <div class="space-y-2.5">
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.12)">
+          <span class="text-lime-300 text-sm flex-shrink-0 mt-0.5">✓</span>
+          <div>
+            <div class="text-sm font-600 text-lime-300">Neon Tetras, Ember Tetras, Cardinal Tetras</div>
+            <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5); line-height:1.6;">Small-mouthed schooling characids that are physically incapable of harming snails. Water parameter overlap is nearly perfect — all thrive in pH 7.0–7.8 with moderate hardness. These are among the safest and most aesthetically compatible tank mates for any mystery snail setup.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.12)">
+          <span class="text-lime-300 text-sm flex-shrink-0 mt-0.5">✓</span>
+          <div>
+            <div class="text-sm font-600 text-lime-300">Corydoras spp. (All varieties)</div>
+            <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5); line-height:1.6;">Armoured catfish that share the substrate zone with snails but show no predatory behaviour toward gastropods. Cory species prefer the same moderate-to-hard water chemistry. Their barbel-based scavenging behaviour even mirrors snails — both species benefit from the same sinking food placement.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.12)">
+          <span class="text-lime-300 text-sm flex-shrink-0 mt-0.5">✓</span>
+          <div>
+            <div class="text-sm font-600 text-lime-300">Otocinclus Catfish</div>
+            <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5); line-height:1.6;">Micro-catfish specialised for algae grazing. Otocinclus frequently climb onto snail shells to access the biofilm on the shell surface — this is harmless grazing behaviour, not predation. Highly recommended as a companion species for algae management without any risk to snails.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.12)">
+          <span class="text-lime-300 text-sm flex-shrink-0 mt-0.5">✓</span>
+          <div>
+            <div class="text-sm font-600 text-lime-300">Dwarf Shrimp (Cherry, Amano, Crystal)</div>
+            <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5); line-height:1.6;">All Neocaridina and Caridina species coexist peacefully with mystery snails. Both groups benefit from identical calcium-rich water chemistry. Amano shrimp (Caridina multidentata) are particularly compatible — their large size means no predation risk, and they are more robust algae-grazers than cherry shrimp.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.12)">
+          <span class="text-lime-300 text-sm flex-shrink-0 mt-0.5">✓</span>
+          <div>
+            <div class="text-sm font-600 text-lime-300">Rasboras, Danios, White Cloud Minnows</div>
+            <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5); line-height:1.6;">Fast-moving mid-water schooling fish that occupy entirely different tank zones from bottom-dwelling snails. White Cloud Mountain Minnows are an excellent option for cooler tanks (20–24 °C) where mystery snails are kept at reduced temperatures to maximise longevity.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.12)">
+          <span class="text-lime-300 text-sm flex-shrink-0 mt-0.5">✓</span>
+          <div>
+            <div class="text-sm font-600 text-lime-300">Other Mystery Snails / Nerite Snails</div>
+            <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5); line-height:1.6;">Conspecifics coexist with zero aggression. Nerite snails (Neritina spp.) are an excellent complement — also algae grazers, require similar water chemistry, but cannot reproduce in freshwater (their eggs require brackish water to develop), preventing population explosions.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Incompatible species -->
+    <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.8); border:1px solid rgba(34,197,94,0.12)">
+      <div class="section-eyebrow mb-3">Predator Database · Threat Levels</div>
+      <h3 class="font-mono text-lg mb-4" style="letter-spacing:-0.02em">Incompatible Tank Mates</h3>
+      <div class="space-y-2.5">
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.15)">
+          <span style="color:#f87171; font-size:14px; flex-shrink:0; margin-top:2px;">✕</span>
+          <div>
+            <div class="text-sm font-600" style="color:#fca5a5">Pufferfish — ALL species (LETHAL)</div>
+            <div class="text-xs mt-0.5" style="color:rgba(252,165,165,0.6); line-height:1.6;">Pufferfish are obligate mollusc predators evolved specifically to crush snail shells with their fused beak-like teeth. Dwarf puffers (Carinotetraodon travancoricus) will systematically eliminate an entire mystery snail colony within days. There are no exceptions — no individual pufferfish can be "trained" or "kept separate" safely in the same aquarium system.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.12)">
+          <span style="color:#f87171; font-size:14px; flex-shrink:0; margin-top:2px;">✕</span>
+          <div>
+            <div class="text-sm font-600" style="color:#fca5a5">Clown Loach, Yo-yo Loach, Zebra Loach (LETHAL)</div>
+            <div class="text-xs mt-0.5" style="color:rgba(252,165,165,0.6); line-height:1.6;">Loaches of the family Botiidae evolved a highly specialised oral morphology — a flexible subterminal mouth with modified dentition capable of extracting snail bodies through the opercular opening. Even a sealed, healthy operculum is insufficient protection against persistent loach extraction attempts. Loaches are deliberately used in pest snail control for this reason.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.12)">
+          <span style="color:#f87171; font-size:14px; flex-shrink:0; margin-top:2px;">✕</span>
+          <div>
+            <div class="text-sm font-600" style="color:#fca5a5">Oscars, Large Cichlids, Jack Dempsey (LETHAL)</div>
+            <div class="text-xs mt-0.5" style="color:rgba(252,165,165,0.6); line-height:1.6;">Large cichlids, while unable to crush adult mystery snail shells directly, exhibit aggressive investigatory biting that destroys exposed soft tissue — tentacles, siphon, and foot are bitten off during repeated harassment. Fatal blood loss and secondary infection follow within days. Small cichlids (Apistogramma spp., German Blue Rams) may be compatible but require case-by-case monitoring in large tanks.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.12)">
+          <span style="color:#f87171; font-size:14px; flex-shrink:0; margin-top:2px;">✕</span>
+          <div>
+            <div class="text-sm font-600" style="color:#fca5a5">Crayfish &amp; Freshwater Crabs (HIGH RISK)</div>
+            <div class="text-xs mt-0.5" style="color:rgba(252,165,165,0.6); line-height:1.6;">Both groups possess powerful claws capable of breaking mystery snail shells. Predation typically occurs nocturnally when snails are resting and the operculum is sealed. Even "dwarf" crayfish species exhibit snail predation behaviour. Not recommended regardless of tank size.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(245,158,11,0.05); border:1px solid rgba(245,158,11,0.15)">
+          <span style="color:#fbbf24; font-size:14px; flex-shrink:0; margin-top:2px;">⚠</span>
+          <div>
+            <div class="text-sm font-600" style="color:#fbbf24">Betta Fish — Individual Dependent (MONITOR)</div>
+            <div class="text-xs mt-0.5" style="color:rgba(251,191,36,0.6); line-height:1.6;">Betta behaviour toward mystery snails varies dramatically by individual. Some bettas completely ignore snails; others nip tentacles and antennae repeatedly, causing chronic stress and injury. Introduce betta and snail simultaneously rather than adding a snail to an established betta territory. Observe closely for 72 hours and separate permanently if any fin-nipping or snail harassment is observed.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-2.5 rounded-lg" style="background:rgba(245,158,11,0.05); border:1px solid rgba(245,158,11,0.15)">
+          <span style="color:#fbbf24; font-size:14px; flex-shrink:0; margin-top:2px;">⚠</span>
+          <div>
+            <div class="text-sm font-600" style="color:#fbbf24">Goldfish (RISKY)</div>
+            <div class="text-xs mt-0.5" style="color:rgba(251,191,36,0.6); line-height:1.6;">Goldfish are opportunistic omnivores that persistently mouth and nip snail soft tissue, causing stress, tentacle loss, and eventual death even when unable to break the shell. Additionally, goldfish thrive at 18–22 °C while mystery snails require 25–28 °C — a fundamental thermal incompatibility that compromises one species' health regardless of the temperature compromise chosen.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+<!-- ════════ END MODULE 04 ════════ -->
+
+
+<!-- ════════════════════════════════════════════
+     MODULE 05 — DIET & DAILY CARE
+     Nutrition science, macronutrient ratios, calcium
+     biochemistry, specific food recommendations, daily
+     and weekly care protocols, feeding schedule
+═════════════════════════════════════════════ -->
+<section id="module-05" class="relative py-20">
+<div class="glow-orb w-[400px] h-[400px] bg-lime-300 opacity-[0.04] left-0 top-0"></div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+    <div>
+      <div class="module-label mb-1">Module 05 · Nutrition Science &amp; Husbandry</div>
+      <h2 class="font-mono mt-1" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.02em;">Diet &amp; Daily Care</h2>
+      <p class="mt-2 text-sm" style="color:rgba(232,245,237,0.5); line-height:1.75;">Nutritional biochemistry, specific food protocols, calcium homeostasis management, and the daily/weekly maintenance schedule for long-term specimen health.</p>
+    </div>
+    <span class="chip">Nutrition Science · Routine Protocol</span>
+  </div>
+
+  <div class="grid md:grid-cols-[1.2fr_1fr] gap-4 mb-4">
+
+    <!-- Dietary science card -->
+    <div class="bento-card card-glow rounded-2xl p-6" style="background: linear-gradient(135deg, rgba(22,53,32,0.9) 0%, rgba(15,38,20,0.8) 100%); border:1px solid rgba(34,197,94,0.15)">
+      <div class="flex items-start justify-between mb-4">
         <div>
-          <div class="section-eyebrow mb-1">Water Chemistry · Complete Reference</div>
-          <h3 class="font-mono text-lg mt-2" style="letter-spacing:-0.02em">Water Parameter Reference</h3>
+          <div class="section-eyebrow mb-1">Nutritional Biochemistry</div>
+          <h3 class="font-mono text-lg mt-1" style="letter-spacing:-0.02em">Dietary Data Module</h3>
         </div>
-        <span class="chip">Parameters · Stable</span>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-
-        <!-- pH -->
-        <div class="relative rounded-xl p-4 scan-line overflow-hidden" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.12)">
-          <div class="section-eyebrow mb-2 flex items-center gap-1.5">
-            <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#22c55e" fill-opacity="0.6"/></svg>
-            pH Level
-          </div>
-          <div class="data-num text-3xl text-lime-300 mb-1">7.2–7.8</div>
-          <div class="text-xs mb-3" style="color:rgba(134,239,172,0.5); line-height:1.6;">High alkalinity is essential to prevent shell erosion in acidic environments.</div>
-          <div class="param-bar"><div class="param-bar-fill" style="width:65%"></div></div>
-        </div>
-
-        <!-- Temperature -->
-        <div class="relative rounded-xl p-4 overflow-hidden" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.12)">
-          <div class="section-eyebrow mb-2 flex items-center gap-1.5">
-            <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#f59e0b" fill-opacity="0.6"/></svg>
-            Temperature
-          </div>
-          <div class="data-num text-3xl text-lime-300 mb-1">68–82°F</div>
-          <div class="text-xs mb-3" style="color:rgba(134,239,172,0.5); line-height:1.6;">Warmer water speeds up metabolism and activity, but shortens lifespan.</div>
-          <div class="param-bar"><div class="param-bar-fill" style="width:58%"></div></div>
-        </div>
-
-        <!-- Hardness -->
-        <div class="relative rounded-xl p-4 overflow-hidden" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.12)">
-          <div class="section-eyebrow mb-2 flex items-center gap-1.5">
-            <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#22c55e" fill-opacity="0.6"/></svg>
-            Hardness GH/KH
-          </div>
-          <div class="data-num text-3xl text-lime-300 mb-1">12–18 dGH</div>
-          <div class="text-xs mb-3" style="color:rgba(134,239,172,0.5); line-height:1.6;">Calcium carbonate is the building block for thick, complete spiral shells.</div>
-          <div class="param-bar"><div class="param-bar-fill" style="width:72%"></div></div>
-        </div>
-
-        <!-- Nitrogen / Ammonia -->
-        <div class="relative rounded-xl p-4 overflow-hidden" style="background:rgba(245,158,11,0.04); border:1px solid rgba(245,158,11,0.15)">
-          <div class="section-eyebrow mb-2 flex items-center gap-1.5" style="color:rgba(251,191,36,0.6)">
-            <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#f59e0b" fill-opacity="0.8"/></svg>
-            Nitrogen · Ammonia
-          </div>
-          <div class="data-num text-3xl mb-1" style="color:#fbbf24">0 ppm</div>
-          <div class="text-xs mb-3" style="color:rgba(251,191,36,0.5); line-height:1.6;">Snails have high bioload; efficient bio-filtration is non-negotiable.</div>
-          <div class="param-bar" style="background:rgba(245,158,11,0.1)">
-            <div class="param-bar-fill" style="width:0%; background:linear-gradient(90deg, #f59e0b, #fbbf24)"></div>
-          </div>
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.2)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 13s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
         </div>
       </div>
-    </div><!-- /parameter table -->
+      <p class="text-sm mb-4" style="color:rgba(232,245,237,0.6); line-height:1.8;"><em>P. diffusa</em> is a detritivore-herbivore with an omnivorous tendency in captivity. Three nutritional priorities must be balanced simultaneously: adequate calcium intake (for shell biomineral deposition), protein (for soft-tissue maintenance, mantle secretion, and reproductive output), and carotenoids (for pigmentation health and immune function). Overfeeding any single food category while neglecting others creates nutritional imbalances that manifest as shell erosion, poor coloration, or reduced fecundity.</p>
 
-  </div>
-</section><!-- /module-03 --><section id="module-04" class="relative py-20">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-      <div>
-        <div class="module-label mb-1">Module 04 · Tank Compatibility</div>
-        <h2 class="font-mono mt-1" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.02em;">Tank Compatibility</h2>
+      <!-- Nutrition proportion bars -->
+      <div class="space-y-3 mb-5">
+        <div>
+          <div class="flex justify-between text-xs mb-1" style="color:rgba(134,239,172,0.7)">
+            <span>Calcium-rich Vegetables (blanched zucchini, spinach, kale, broccoli)</span>
+            <span class="data-num">40%</span>
+          </div>
+          <div class="param-bar"><div class="param-bar-fill" style="width:40%"></div></div>
+          <div class="text-[10px] mt-1" style="color:rgba(134,239,172,0.4); line-height:1.6;">Blanch all vegetables for 30–60 seconds in boiling water before offering — this softens the cellular matrix, improves palatability, and removes oxalic acid from high-oxalate greens (spinach, kale) that can otherwise impair Ca²⁺ absorption in the gut.</div>
+        </div>
+        <div>
+          <div class="flex justify-between text-xs mb-1" style="color:rgba(134,239,172,0.7)">
+            <span>Biofilm &amp; Algae (periphytic film + spirulina wafers)</span>
+            <span class="data-num">30%</span>
+          </div>
+          <div class="param-bar"><div class="param-bar-fill" style="width:30%"></div></div>
+          <div class="text-[10px] mt-1" style="color:rgba(134,239,172,0.4); line-height:1.6;">Natural periphytic biofilm (the thin microbial community coating hard surfaces) is the most nutritionally complete and bioavailable food source. A well-lit tank with 8–10 hours of moderate lighting per day maintains sufficient biofilm on glass, decorations, and plant leaves. Spirulina-based algae wafers supplement in low-biofilm environments.</div>
+        </div>
+        <div>
+          <div class="flex justify-between text-xs mb-1" style="color:rgba(134,239,172,0.7)">
+            <span>Protein-rich gel food (Repashy, Vitalis, DIY gel)</span>
+            <span class="data-num">20%</span>
+          </div>
+          <div class="param-bar"><div class="param-bar-fill" style="width:20%"></div></div>
+          <div class="text-[10px] mt-1" style="color:rgba(134,239,172,0.4); line-height:1.6;">Gel foods (Repashy Soilent Green, Bottom Scratcher) provide concentrated protein, vitamins, and minerals in a water-stable format. Essential for breeding females — protein demand increases dramatically during oviposition. Gel foods dissolve slowly, minimising ammonia risk from uneaten food versus powder supplements.</div>
+        </div>
+        <div>
+          <div class="flex justify-between text-xs mb-1" style="color:rgba(134,239,172,0.7)">
+            <span>Sinking pellets / commercial supplemental foods</span>
+            <span class="data-num">10%</span>
+          </div>
+          <div class="param-bar"><div class="param-bar-fill" style="width:10%"></div></div>
+          <div class="text-[10px] mt-1" style="color:rgba(134,239,172,0.4); line-height:1.6;">High-quality sinking pellets (NLS, Hikari Sinking Wafers) provide trace minerals and vitamin premixes. Use sparingly — standard commercial pellets dissolve quickly and are ammonia-risk foods. Never leave uneaten pellets in the tank beyond 2 hours.</div>
+        </div>
       </div>
-      <p class="max-w-sm text-sm" style="color:rgba(232,245,237,0.5)">Not all aquarium inhabitants coexist peacefully with gastropods.</p>
+
+      <div class="divider mb-4"></div>
+      <div class="section-eyebrow mb-2">Calcium Homeostasis — The Critical Variable</div>
+      <p class="text-sm" style="color:rgba(232,245,237,0.55); line-height:1.8;">Shell deposition rate is directly proportional to the concentration of dissolved calcium (Ca²⁺) and bicarbonate (HCO₃⁻) in the water, the ambient pH, and the snail's dietary calcium intake. At pH 7.4–7.8 with GH 14–18 dGH, the water is supersaturated with respect to aragonite — the mantle can deposit new shell material efficiently. Below pH 7.0, the water becomes aragonite-undersaturated; dissolution exceeds deposition and shells thin, pit, and eventually perforate. Dietary calcium from blanched kale, broccoli stems, and cuttlebone provides the supplemental calcium needed when water hardness alone is insufficient for maximum shell repair rates.</p>
+      <div class="mt-4 grid grid-cols-3 gap-2 text-center">
+        <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.1)">
+          <div class="data-num text-sm text-lime-300 mb-1">Cuttlebone</div>
+          <div class="text-[10px]" style="color:rgba(134,239,172,0.5); line-height:1.5;">Passive pH-reactive Ca²⁺ release. Self-limiting — dissolves faster in low pH. Best long-term supplement.</div>
+        </div>
+        <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.1)">
+          <div class="data-num text-sm text-lime-300 mb-1">Crushed Coral</div>
+          <div class="text-[10px]" style="color:rgba(134,239,172,0.5); line-height:1.5;">Place in filter media. Raises both GH and KH. Prevents pH crash. Excellent in soft-water regions.</div>
+        </div>
+        <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.1)">
+          <div class="data-num text-sm text-lime-300 mb-1">Wonder Shell</div>
+          <div class="text-[10px]" style="color:rgba(134,239,172,0.5); line-height:1.5;">Mineral block with multiple electrolytes. Fast-acting. Useful for acute calcium-deficiency recovery.</div>
+        </div>
+      </div>
     </div>
 
-    <div class="grid md:grid-cols-[1fr_1fr] gap-4">
-
-      <!-- Safe tank mates -->
-      <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.8); border:1px solid rgba(34,197,94,0.12)">
-        <div class="section-eyebrow mb-3">Compatible Species</div>
-        <h3 class="font-mono text-lg mb-4" style="letter-spacing:-0.02em">Safe Tank Mates</h3>
-        <div class="space-y-2">
-          <div class="flex items-center gap-3 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.12)">
-            <span class="text-lime-300 text-sm">✓</span>
-            <div class="flex-1">
-              <div class="text-sm font-600 text-lime-300">Neon Tetras / Ember Tetras</div>
-              <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5)">Small, peaceful — ignore snails entirely</div>
-            </div>
-          </div>
-          <div class="flex items-center gap-3 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.12)">
-            <span class="text-lime-300 text-sm">✓</span>
-            <div class="flex-1">
-              <div class="text-sm font-600 text-lime-300">Corydoras / Otocinclus</div>
-              <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5)">Bottom dwellers — no interaction with snails</div>
-            </div>
-          </div>
-          <div class="flex items-center gap-3 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.12)">
-            <span class="text-lime-300 text-sm">✓</span>
-            <div class="flex-1">
-              <div class="text-sm font-600 text-lime-300">Dwarf Shrimp (Cherry, Amano)</div>
-              <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5)">Coexist peacefully; share algae grazing niche</div>
-            </div>
-          </div>
-          <div class="flex items-center gap-3 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.12)">
-            <span class="text-lime-300 text-sm">✓</span>
-            <div class="flex-1">
-              <div class="text-sm font-600 text-lime-300">Rasboras / White Cloud Minnows</div>
-              <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5)">Schooling fish — naturally avoid snails</div>
-            </div>
-          </div>
-          <div class="flex items-center gap-3 p-2.5 rounded-lg" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.12)">
-            <span class="text-lime-300 text-sm">✓</span>
-            <div class="flex-1">
-              <div class="text-sm font-600 text-lime-300">Other Mystery Snails</div>
-              <div class="text-xs mt-0.5" style="color:rgba(134,239,172,0.5)">Coexist entirely peacefully with conspecifics</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Incompatible / predator list -->
-      <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.8); border:1px solid rgba(34,197,94,0.12)">
-        <div class="section-eyebrow mb-3">Predator Database</div>
-        <h3 class="font-mono text-lg mb-4" style="letter-spacing:-0.02em">Incompatible Tank Mates</h3>
-        <div class="space-y-2">
-          <div class="flex items-center gap-3 p-2.5 rounded-lg" style="background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.15)">
-            <span style="color:#f87171; font-size:14px">✕</span>
-            <div class="flex-1">
-              <div class="text-sm font-600" style="color:#fca5a5">Pufferfish (all species)</div>
-              <div class="text-xs mt-0.5" style="color:rgba(252,165,165,0.5)">Specialized snail predator — will systematically crush shells</div>
-            </div>
-          </div>
-          <div class="flex items-center gap-3 p-2.5 rounded-lg" style="background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.12)">
-            <span style="color:#f87171; font-size:14px">✕</span>
-            <div class="flex-1">
-              <div class="text-sm font-600" style="color:#fca5a5">Clown Loach &amp; Yo-yo Loach</div>
-              <div class="text-xs mt-0.5" style="color:rgba(252,165,165,0.5)">Evolved tongue structure extracts snails from shells</div>
-            </div>
-          </div>
-          <div class="flex items-center gap-3 p-2.5 rounded-lg" style="background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.12)">
-            <span style="color:#f87171; font-size:14px">✕</span>
-            <div class="flex-1">
-              <div class="text-sm font-600" style="color:#fca5a5">Oscar / Cichlids / Jack Dempsey</div>
-              <div class="text-xs mt-0.5" style="color:rgba(252,165,165,0.5)">Too aggressive; will attack and bite antennae</div>
-            </div>
-          </div>
-          <div class="flex items-center gap-3 p-2.5 rounded-lg" style="background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.12)">
-            <span style="color:#f87171; font-size:14px">✕</span>
-            <div class="flex-1">
-              <div class="text-sm font-600" style="color:#fca5a5">Crayfish &amp; Crabs</div>
-              <div class="text-xs mt-0.5" style="color:rgba(252,165,165,0.5)">Opportunistic predators; will attack during molting</div>
-            </div>
-          </div>
-          <div class="flex items-center gap-3 p-2.5 rounded-lg" style="background:rgba(245,158,11,0.05); border:1px solid rgba(245,158,11,0.15)">
-            <span style="color:#fbbf24; font-size:14px">⚠</span>
-            <div class="flex-1">
-              <div class="text-sm font-600" style="color:#fbbf24">Betta Fish</div>
-              <div class="text-xs mt-0.5" style="color:rgba(251,191,36,0.6)">Individual dependent — monitor closely; some ignore snails entirely, others attack antennae</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- /2-col grid -->
-  </div>
-</section><!-- /module-04 --><section id="module-05" class="relative py-20">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-      <div>
-        <div class="module-label mb-1">Module 05 · Diet & Daily Care</div>
-        <h2 class="font-mono mt-1" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.02em;">Diet &amp; Daily Care</h2>
-      </div>
-      <span class="chip">Nutrition Science · Routine Protocol</span>
-    </div>
-
-    <div class="grid md:grid-cols-[1.2fr_1fr] gap-4">
-
-      <!-- Dietary module card -->
-      <div class="bento-card card-glow rounded-2xl p-6" style="background: linear-gradient(135deg, rgba(22,53,32,0.9) 0%, rgba(15,38,20,0.8) 100%); border:1px solid rgba(34,197,94,0.15)">
-        <div class="flex items-start justify-between mb-4">
-          <div>
-            <div class="section-eyebrow mb-1">Nutrition Science</div>
-            <h3 class="font-mono text-lg mt-1" style="letter-spacing:-0.02em">Dietary Data Module</h3>
-          </div>
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.2)">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 13s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
-          </div>
-        </div>
-        <p class="text-sm mb-4" style="color:rgba(232,245,237,0.6); line-height:1.75;">Omnivorous grazers require a balance of plant matter and protein to maintain shell integrity and metabolic health.</p>
-
-        <!-- Nutrition proportion bars -->
-        <div class="space-y-3 mb-5">
-          <div>
-            <div class="flex justify-between text-xs mb-1" style="color:rgba(134,239,172,0.7)"><span>Calcium-rich Greens</span><span class="data-num">40%</span></div>
-            <div class="param-bar"><div class="param-bar-fill" style="width:40%"></div></div>
-          </div>
-          <div>
-            <div class="flex justify-between text-xs mb-1" style="color:rgba(134,239,172,0.7)"><span>Algae (film + wafers)</span><span class="data-num">35%</span></div>
-            <div class="param-bar"><div class="param-bar-fill" style="width:35%"></div></div>
-          </div>
-          <div>
-            <div class="flex justify-between text-xs mb-1" style="color:rgba(134,239,172,0.7)"><span>Protein (Repashy, pellets)</span><span class="data-num">20%</span></div>
-            <div class="param-bar"><div class="param-bar-fill" style="width:20%"></div></div>
-          </div>
-          <div>
-            <div class="flex justify-between text-xs mb-1" style="color:rgba(134,239,172,0.7)"><span>Supplemental Wafers</span><span class="data-num">5%</span></div>
-            <div class="param-bar"><div class="param-bar-fill" style="width:5%"></div></div>
-          </div>
-        </div>
-
-        <div class="divider mb-4"></div>
-        <div class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.5); line-height:1.75;">
-          <strong class="text-lime-300">Best calcium foods:</strong> Blanched zucchini, spinach, kale, cuttlebone, crushed coral. Remove uneaten vegetables within 24 hrs to prevent ammonia spikes.
-        </div>
-      </div>
-
-      <!-- Daily care checklist card -->
+    <!-- Daily care checklist -->
+    <div class="space-y-4">
       <div class="bento-card rounded-2xl p-6" style="background: linear-gradient(135deg, rgba(34,197,94,0.12) 0%, rgba(15,38,20,0.9) 60%); border:1px solid rgba(34,197,94,0.2)">
         <div class="section-eyebrow mb-1">Routine Protocol</div>
-        <h3 class="font-mono text-lg mt-1 mb-4" style="letter-spacing:-0.02em">Daily Care Checklist</h3>
-
+        <h3 class="font-mono text-lg mt-1 mb-4" style="letter-spacing:-0.02em">Daily &amp; Weekly Care</h3>
         <div class="space-y-3">
-          <!-- Checked items -->
-          <label class="flex items-center gap-3 cursor-pointer">
-            <div class="w-5 h-5 rounded flex items-center justify-center flex-shrink-0" style="background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.3)">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <div class="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5" style="background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.3)">
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#22c55e" stroke-width="2"><path d="M2 5l2.5 2.5L8 3"/></svg>
             </div>
-            <span class="text-sm" style="color:rgba(232,245,237,0.75); line-height:1.6;">Test water chemistry (pH, ammonia)</span>
+            <span class="text-sm" style="color:rgba(232,245,237,0.75); line-height:1.75;"><strong class="text-lime-300">Daily:</strong> Test pH and ammonia with liquid reagent kit. Morning readings are most informative as nighttime respiration raises CO₂, lowering pH — an early warning of inadequate buffering capacity.</span>
           </label>
-          <label class="flex items-center gap-3 cursor-pointer">
-            <div class="w-5 h-5 rounded flex items-center justify-center flex-shrink-0" style="background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.3)">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <div class="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5" style="background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.3)">
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#22c55e" stroke-width="2"><path d="M2 5l2.5 2.5L8 3"/></svg>
             </div>
-            <span class="text-sm" style="color:rgba(232,245,237,0.75); line-height:1.6;">Add calcium supplement if needed</span>
+            <span class="text-sm" style="color:rgba(232,245,237,0.75); line-height:1.75;"><strong class="text-lime-300">Daily:</strong> Visual health check — observe each snail for activity level, operculum condition, and tentacle integrity. A snail motionless for more than 24 hours in a sealed-operculum resting position is most likely sleeping normally; motionless with drooping operculum requires immediate intervention.</span>
           </label>
-          <label class="flex items-center gap-3 cursor-pointer">
-            <div class="w-5 h-5 rounded flex items-center justify-center flex-shrink-0" style="background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.3)">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <div class="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5" style="background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.3)">
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#22c55e" stroke-width="2"><path d="M2 5l2.5 2.5L8 3"/></svg>
             </div>
-            <span class="text-sm" style="color:rgba(232,245,237,0.75); line-height:1.6;">Surface check — snail movement &amp; operculum</span>
+            <span class="text-sm" style="color:rgba(232,245,237,0.75); line-height:1.75;"><strong class="text-lime-300">Daily:</strong> Remove all uneaten vegetable matter within 24 hours without exception. Decomposing organics (especially spinach and blanched greens) release ammonia rapidly — a single piece of rotting zucchini can spike NH₃ by 0.5 ppm in a 10-gallon tank within 12 hours.</span>
           </label>
-          <!-- Unchecked / to-do items -->
-          <label class="flex items-center gap-3 cursor-pointer">
-            <div class="w-5 h-5 rounded flex-shrink-0" style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.15)"></div>
-            <span class="text-sm" style="color:rgba(232,245,237,0.5); line-height:1.6;">Remove uneaten food (24 hr rule)</span>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <div class="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5" style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.15)"></div>
+            <span class="text-sm" style="color:rgba(232,245,237,0.5); line-height:1.75;"><strong>Weekly:</strong> 20–30% water change using a siphon gravel vacuum. Temperature-match new water within ±1 °C; treat with full-spectrum dechlorinator. This is the single most impactful water-quality maintenance action available to hobbyists.</span>
           </label>
-          <label class="flex items-center gap-3 cursor-pointer">
-            <div class="w-5 h-5 rounded flex-shrink-0" style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.15)"></div>
-            <span class="text-sm" style="color:rgba(232,245,237,0.5); line-height:1.6;">Weekly 20–30% water change</span>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <div class="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5" style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.15)"></div>
+            <span class="text-sm" style="color:rgba(232,245,237,0.5); line-height:1.75;"><strong>Weekly:</strong> Inspect cuttlebone condition — replace when more than half dissolved. Check lid seal around equipment penetrations. Verify sponge prefilters are unclogged and flowing normally.</span>
           </label>
-          <label class="flex items-center gap-3 cursor-pointer">
-            <div class="w-5 h-5 rounded flex-shrink-0" style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.15)"></div>
-            <span class="text-sm" style="color:rgba(232,245,237,0.5); line-height:1.6;">Inspect tank lid seal — escape prevention</span>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <div class="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5" style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.15)"></div>
+            <span class="text-sm" style="color:rgba(232,245,237,0.5); line-height:1.75;"><strong>Monthly:</strong> Deep clean filter media by rinsing in tank water (never tap water — chlorine destroys the beneficial bacterial colony). Test GH and KH; adjust mineral supplementation if readings have drifted.</span>
           </label>
         </div>
-
         <div class="mt-5 pt-4 border-t" style="border-color:rgba(34,197,94,0.1)">
           <a href="#module-07" class="flex items-center gap-1 text-xs text-lime-300 hover:text-lime-200 transition-colors">
-            View Full Health Protocol →
+            View Full Shell Health &amp; Pathology Protocol →
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       </div>
-    </div><!-- /2-col grid -->
 
-  </div>
-</section><!-- /module-05 --><section id="module-06" class="relative py-20 overflow-hidden">
-  <div class="glow-orb w-[500px] h-[500px] bg-emerald-400 opacity-[0.05] -right-32 top-0"></div>
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-
-    <div class="text-center mb-12">
-      <div class="module-label mb-2">Module 06 · Breeding & Reproduction</div>
-      <h2 class="font-mono mt-1" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.02em;">Breeding &amp; Reproduction</h2>
-      <p class="mt-3 max-w-xl mx-auto text-sm" style="color:rgba(232,245,237,0.5); line-height:1.75;">Sexing, clutch incubation pipeline, and colony population management.</p>
-    </div>
-
-    <div class="grid lg:grid-cols-[1.4fr_1fr] gap-6">
-
-      <!-- Left column: incubation timeline + sexing -->
-      <div class="space-y-4">
-
-        <!-- Incubation pipeline -->
-        <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.8); border:1px solid rgba(34,197,94,0.12)">
-          <div class="flex items-center gap-2 mb-5">
-            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(34,197,94,0.12); border:1px solid rgba(34,197,94,0.2)">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3 class="font-mono text-lg" style="letter-spacing:-0.02em">Incubation Pipeline</h3>
+      <!-- Feeding schedule reference card -->
+      <div class="bento-card card-glow rounded-2xl p-5" style="background:rgba(15,38,20,0.8); border:1px solid rgba(34,197,94,0.12)">
+        <div class="section-eyebrow mb-3">Feeding Schedule Reference</div>
+        <div class="space-y-2">
+          <div class="flex justify-between items-center py-2 border-b" style="border-color:rgba(34,197,94,0.08)">
+            <span class="text-sm" style="color:rgba(232,245,237,0.7)">Blanched zucchini / spinach / kale</span>
+            <span class="chip text-[10px]">Every 2–3 days</span>
           </div>
-
-          <div class="relative pl-6">
-            <div class="absolute left-[5px] top-2 bottom-2 w-px" style="background:linear-gradient(to bottom, #22c55e, rgba(34,197,94,0.1))"></div>
-
-            <div class="relative mb-6">
-              <div class="absolute -left-6 top-1 timeline-dot"></div>
-              <div class="chip mb-1.5 w-fit text-[10px]">Phase 1 · Day 0</div>
-              <h4 class="text-sm font-600 mb-1" style="color:#e8f5ed">Clutch Deposition</h4>
-              <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.55); line-height:1.75;">Females typically lay pink, cocoon-like clutches 2–4 hours after dark, <em>above</em> the waterline in humid areas. Each clutch can contain 50–200 eggs. Lower the water level 8–10 cm to give the female space. Increase feeding 2 weeks prior to encourage laying.</p>
-            </div>
-
-            <div class="relative mb-6">
-              <div class="absolute -left-6 top-1" style="width:10px; height:10px; border-radius:50%; background:#4ade80; box-shadow: 0 0 8px rgba(74,222,128,0.4)"></div>
-              <div class="chip mb-1.5 w-fit text-[10px]">Phase 2 · Days 1–14</div>
-              <h4 class="text-sm font-600 mb-1" style="color:#e8f5ed">Humidity Saturation</h4>
-              <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.55); line-height:1.75;">Maintain 80%+ humidity without direct water contact to prevent drowning or drying. Keep the lid slightly ajar or mist the glass near the clutch lightly every 2 days. At 26°C, expect hatching around day 16–18.</p>
-            </div>
-
-            <div class="relative">
-              <div class="absolute -left-6 top-1" style="width:10px; height:10px; border-radius:50%; background:#86efac; box-shadow: 0 0 6px rgba(134,239,172,0.3)"></div>
-              <div class="chip mb-1.5 w-fit text-[10px]">Phase 3 · Day 14–28</div>
-              <h4 class="text-sm font-600 mb-1" style="color:#e8f5ed">Emergence Phase</h4>
-              <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.55); line-height:1.75;">Dark shells become visible as the clutch softens. Hatchlings drop into the water below. Immediately provide algae film — hatchlings eating algae in the first 8 days show 90%+ survival vs 64% on commercial food alone.</p>
-            </div>
+          <div class="flex justify-between items-center py-2 border-b" style="border-color:rgba(34,197,94,0.08)">
+            <span class="text-sm" style="color:rgba(232,245,237,0.7)">Spirulina algae wafers</span>
+            <span class="chip text-[10px]">2–3× per week</span>
+          </div>
+          <div class="flex justify-between items-center py-2 border-b" style="border-color:rgba(34,197,94,0.08)">
+            <span class="text-sm" style="color:rgba(232,245,237,0.7)">Repashy / protein gel food</span>
+            <span class="chip text-[10px]">1–2× per week</span>
+          </div>
+          <div class="flex justify-between items-center py-2 border-b" style="border-color:rgba(34,197,94,0.08)">
+            <span class="text-sm" style="color:rgba(232,245,237,0.7)">Cuttlebone (passive in-tank)</span>
+            <span class="chip text-[10px]">Continuous · replace monthly</span>
+          </div>
+          <div class="flex justify-between items-center py-2 border-b" style="border-color:rgba(34,197,94,0.08)">
+            <span class="text-sm" style="color:rgba(232,245,237,0.7)">Blanched broccoli stem (calcium boost)</span>
+            <span class="chip text-[10px]">1× per week</span>
+          </div>
+          <div class="flex justify-between items-center py-2">
+            <span class="text-sm" style="color:rgba(232,245,237,0.7)">Sinking pellets (supplement)</span>
+            <span class="chip text-[10px]">2–3× per week · remove in 2 hr</span>
           </div>
         </div>
-
-        <!-- Sexing guide -->
-        <div class="bento-card card-glow rounded-2xl p-5" style="background:rgba(15,38,20,0.8); border:1px solid rgba(34,197,94,0.12)">
-          <div class="section-eyebrow mb-3">Reproductive Biology</div>
-          <h3 class="font-mono text-lg mb-3" style="letter-spacing:-0.02em">Sexing Mystery Snails</h3>
-          <p class="text-sm mb-3" style="color:rgba(232,245,237,0.6); line-height:1.75;">Mystery snails are <strong class="text-lime-300">dioecious</strong> — strictly separate sexes. They cannot self-fertilize. Keep 5–6 snails to ensure a mix of sexes.</p>
-          <div class="grid grid-cols-2 gap-3">
-            <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
-              <div class="text-xs font-600 text-lime-300 mb-1.5">♂ Male</div>
-              <ul class="text-xs space-y-1" style="color:rgba(232,245,237,0.6); line-height:1.6;">
-                <li>• Visible penis sheath (upper right mantle)</li>
-                <li>• Slightly smaller shell</li>
-                <li>• Identified when snail fully extends</li>
-              </ul>
-            </div>
-            <div class="rounded-xl p-3" style="background:rgba(74,222,128,0.04); border:1px solid rgba(74,222,128,0.1)">
-              <div class="text-xs font-600 mb-1.5" style="color:#86efac">♀ Female</div>
-              <ul class="text-xs space-y-1" style="color:rgba(232,245,237,0.6); line-height:1.6;">
-                <li>• No sheath visible in mantle</li>
-                <li>• Often slightly larger</li>
-                <li>• Deposits eggs above waterline</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div><!-- /left column -->
-
-      <!-- Right column: clutch image + tips -->
-      <div class="space-y-4">
-
-        <!-- Clutch image card -->
-        <div class="bento-card rounded-2xl overflow-hidden" style="border:1px solid rgba(34,197,94,0.15)">
-          <div class="relative aspect-video img-placeholder">
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="text-center">
-                <div class="section-eyebrow mb-1">Clutch Photography</div>
-                <div class="text-xs" style="color:rgba(134,239,172,0.4)">[Mystery snail egg clutch above waterline]</div>
-              </div>
-            </div>
-            <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-forest-800 to-transparent"></div>
-          </div>
-          <div class="p-4" style="background:rgba(15,38,20,0.9)">
-            <div class="section-eyebrow mb-1">Egg Identification</div>
-            <p class="text-sm" style="color:rgba(232,245,237,0.6); line-height:1.75;">Fresh clutch = bright pink-magenta. Viable clutch darkens to cocoa-brown over days. Infertile or dead clutch stays pale/white and may mold. Discard moldy clutches to protect water quality.</p>
-          </div>
-        </div>
-
-        <!-- Pro tip: Dry Zone -->
-        <div class="bento-card rounded-2xl p-5" style="background:rgba(22,53,32,0.8); border:1px solid rgba(34,197,94,0.2)">
-          <div class="flex items-center gap-2 mb-3">
-            <div class="w-6 h-6 rounded flex items-center justify-center" style="background:#22c55e">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0a1a0f" stroke-width="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <span class="text-xs font-600 text-lime-200">Pro Tip: Reproductive Dry Zone</span>
-          </div>
-          <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.65); line-height:1.75;">Always leave 2–4 inches of dry glass at the top of your aquarium — the <em>"Reproductive Dry Zone."</em> Females may crawl out or refuse to lay eggs, leading to egg-binding — a potentially fatal condition.</p>
-        </div>
-
-        <!-- Population control warning -->
-        <div class="bento-card warn-stripe rounded-2xl p-5" style="background:rgba(245,158,11,0.05); border:1px solid rgba(245,158,11,0.2)">
-          <div class="flex items-start gap-3">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" class="flex-shrink-0 mt-0.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            <div>
-              <div class="text-xs font-600 mb-1" style="color:#fbbf24">Controlling Population</div>
-              <p class="text-sm" style="color:rgba(251,191,36,0.7); line-height:1.75;">Keep water level within 2–3 cm of the lid to eliminate the dry zone — females will not lay. Or keep only one snail. Stored sperm can fertilize multiple clutches after a single mating.</p>
-            </div>
-          </div>
-        </div>
-      </div><!-- /right column -->
-
-    </div><!-- /2-col grid -->
-  </div>
-</section><!-- /module-06 --><section id="module-07" class="relative py-20 overflow-hidden">
-  <div class="glow-orb w-[400px] h-[400px] bg-red-400 opacity-[0.04] left-0 top-1/2"></div>
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-
-    <div class="mb-12">
-      <div class="module-label mb-1">Module 07 · Shell Health & Pathologies</div>
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mt-2">
-        <h2 class="font-mono" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.02em;">Shell Health &amp;<br>Common Pathologies</h2>
-        <p class="max-w-sm text-sm" style="color:rgba(232,245,237,0.5); line-height:1.75;">Shell integrity is the primary bioindicator of a mystery snail's overall physiological health.</p>
       </div>
     </div>
+  </div><!-- /2-col grid -->
 
-    <div class="grid lg:grid-cols-[1fr_1.2fr] gap-6">
-
-      <!-- Left: Health protocols + copper warning -->
-      <div class="space-y-4">
-
-        <!-- Protocol cards -->
-        <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.8); border:1px solid rgba(34,197,94,0.12)">
-
-          <div class="flex items-start gap-4 mb-5 pb-5" style="border-bottom:1px solid rgba(34,197,94,0.08)">
-            <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,197,94,0.12); border:1px solid rgba(34,197,94,0.2)">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div>
-              <h4 class="text-sm font-600 mb-1" style="color:#e8f5ed">Calcium Bio-tracking</h4>
-              <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.55); line-height:1.75;">Monitor the leading edge of the shell. Translucent growth indicates calcium-deficiency or low pH. Improvement appears as opaque new shell at the aperture within 2–3 weeks of fixing water chemistry. Maintain GH above 12 to ensure continuous repair cycles.</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-4 mb-5 pb-5" style="border-bottom:1px solid rgba(34,197,94,0.08)">
-            <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,197,94,0.12); border:1px solid rgba(34,197,94,0.2)">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
-            </div>
-            <div>
-              <h4 class="text-sm font-600 mb-1" style="color:#e8f5ed">Pinhole Prevention</h4>
-              <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.55); line-height:1.75;">Pinholes and pitting develop in acidic water. Maintain GH above 12 for continuous repair cycles. Cuttlebone, crushed coral, and Wonder Shell are the most reliable calcium supplementation methods.</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-4">
-            <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,197,94,0.12); border:1px solid rgba(34,197,94,0.2)">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            </div>
-            <div>
-              <h4 class="text-sm font-600 mb-1" style="color:#e8f5ed">Operculum Assessment</h4>
-              <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.55); line-height:1.75;">A fully sealed operculum = healthy snail at rest. Loose, detaching, or absent operculum = severe distress. Healthy snails sleep up to 13 hours/day. If a snail hasn't moved in 24+ hrs, gently smell — death produces a strong sulfur odor immediately.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contraindicated substances (copper) -->
-        <div class="danger-card bento-card rounded-2xl p-5">
-          <div class="flex items-center gap-2 mb-1">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            <span class="text-sm font-600" style="color:#fca5a5">Contraindicated Substances</span>
-          </div>
-          <div class="font-mono text-[10px] mb-3" style="color:rgba(239,68,68,0.4)">/copper-toxic-mystery-snail/</div>
-          <p class="text-sm leading-relaxed mb-3" style="color:rgba(252,165,165,0.8); line-height:1.75;">
-            <strong>Copper (Cu²⁺) is acutely lethal</strong> to all invertebrates, including copper sulfate compounds. Always check ingredient lists on fish medications, fertilizers, and foods.
-          </p>
-          <div class="space-y-1.5 text-sm" style="color:rgba(252,165,165,0.6); line-height:1.6;">
-            <div class="flex gap-2">⚠ Ich treatments, antibiotics, anti-parasitic medications</div>
-            <div class="flex gap-2">⚠ Planted tank fertilizers (trace copper micronutrients)</div>
-            <div class="flex gap-2">⚠ Fish foods containing cupric sulfate</div>
-            <div class="flex gap-2">⚠ Tap water from copper plumbing (use dechlorinator)</div>
-          </div>
-          <div class="flex flex-wrap gap-1.5 mt-3">
-            <span class="chip chip-danger text-[10px]">copper toxicity</span>
-            <span class="chip chip-warn text-[10px]">fertilizer snail safety</span>
-            <span class="chip chip-danger text-[10px]">copper toxic snails</span>
-          </div>
-        </div>
-      </div><!-- /left column -->
-
-      <!-- Right: Shell specimen + analysis data -->
-      <div class="space-y-4">
-        <div class="bento-card rounded-2xl overflow-hidden" style="border:1px solid rgba(34,197,94,0.15)">
-          <div class="relative aspect-square img-placeholder max-h-64 overflow-hidden">
-            <div class="absolute inset-0 flex items-center justify-center flex-col gap-2">
-              <div class="section-eyebrow">Shell Specimen</div>
-              <div class="text-xs" style="color:rgba(134,239,172,0.3)">[High-resolution shell cross section]</div>
-            </div>
-            <div class="absolute top-3 right-3 rounded-lg px-3 py-2 text-xs" style="background:rgba(10,26,15,0.85); border:1px solid rgba(34,197,94,0.2)">
-              <div class="section-eyebrow mb-1">Structural Analysis</div>
-              <div class="data-num text-lime-300">⊕ Scanning</div>
-            </div>
-          </div>
-          <div class="p-4" style="background:rgba(15,38,20,0.95)">
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-xs" style="color:rgba(134,239,172,0.6)">Shell Density</span>
-              <span class="chip chip-warn text-[10px]">60% Optimal</span>
-            </div>
-            <div class="param-bar mb-3"><div class="param-bar-fill" style="width:60%"></div></div>
-            <div class="grid grid-cols-3 gap-2 text-[10px] text-center" style="color:rgba(134,239,172,0.5)">
-              <div class="rounded p-1.5" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.1)">
-                <div class="data-num text-lime-300 text-sm">7.6</div><div>pH</div>
-              </div>
-              <div class="rounded p-1.5" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.1)">
-                <div class="data-num text-lime-300 text-sm">14 dGH</div><div>Hardness</div>
-              </div>
-              <div class="rounded p-1.5" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.1)">
-                <div class="data-num text-lime-300 text-sm">0</div><div>Cu ppm</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-      </div><!-- /right column -->
-
-    </div><!-- /2-col grid -->
-  </div>
-</section><!-- /module-07 -->
-
-
+</div>
+</section>
+<!-- ════════ END MODULE 05 ════════ -->
 
 
 <!-- ════════════════════════════════════════════
-     TEMPLATE FOR MODULES 08 – 40
-     Copy this block and increment the id/number.
-     Replace placeholder content with your topic.
+     MODULE 06 — BREEDING & REPRODUCTION
+     Dioecious biology, sexing methods, oviposition
+     mechanics, clutch incubation humidity science,
+     hatchling first-week survival protocols,
+     population control strategies
 ═════════════════════════════════════════════ -->
+<section id="module-06" class="relative py-20 overflow-hidden">
+<div class="glow-orb w-[500px] h-[500px] bg-pink-400 opacity-[0.04] -right-32 top-0"></div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+
+  <div class="text-center mb-12">
+    <div class="module-label mb-2">Module 06 · Reproductive Biology</div>
+    <h2 class="font-mono mt-1" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.02em;">Breeding &amp; Reproduction</h2>
+    <p class="mt-3 max-w-2xl mx-auto text-sm" style="color:rgba(232,245,237,0.5); line-height:1.75;">Complete reproductive biology from dioecious sexing through incubation humidity science, hatchling first-week protocols, and colony population management strategies.</p>
+  </div>
+
+  <div class="grid lg:grid-cols-[1.4fr_1fr] gap-6">
+
+    <!-- Left: incubation pipeline + sexing -->
+    <div class="space-y-4">
+
+      <!-- Incubation pipeline card -->
+      <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.8); border:1px solid rgba(34,197,94,0.12)">
+        <div class="flex items-center gap-2 mb-5">
+          <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(34,197,94,0.12); border:1px solid rgba(34,197,94,0.2)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="font-mono text-lg" style="letter-spacing:-0.02em">Clutch Incubation Pipeline</h3>
+        </div>
+
+        <div class="relative pl-6">
+          <div class="absolute left-[5px] top-2 bottom-2 w-px" style="background:linear-gradient(to bottom, #22c55e, rgba(34,197,94,0.1))"></div>
+
+          <div class="relative mb-6">
+            <div class="absolute -left-6 top-1 timeline-dot"></div>
+            <div class="chip mb-1.5 w-fit text-[10px]">Phase 1 · Day 0 — Oviposition</div>
+            <h4 class="text-sm font-600 mb-2" style="color:#e8f5ed">Clutch Deposition</h4>
+            <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.55); line-height:1.8;">Female <em>P. diffusa</em> ascend above the waterline — typically 1–3 hours after lights-off — and deposit a compact, calcified egg mass on a dry surface: glass, lid underside, or filter equipment above the water. Each clutch contains 50–200 spherical eggs (1.5–2 mm diameter) arranged in tight rows within a pink-to-magenta, slightly waxy, rigid matrix that hardens on air contact within minutes. The clutch is coated with a mucus secretion during laying that begins calcifying immediately, providing the eggs with a semi-rigid protective enclosure. To encourage successful deposition: lower water level 8–10 cm from the lid to create adequate dry surface area. Increase protein and calcium feeding 10–14 days prior to anticipated laying. A single mating can fertilise multiple successive clutches over months — stored sperm in the female's seminal receptacle remains viable for extended periods.</p>
+          </div>
+
+          <div class="relative mb-6">
+            <div class="absolute -left-6 top-1" style="width:10px; height:10px; border-radius:50%; background:#4ade80; box-shadow: 0 0 8px rgba(74,222,128,0.4)"></div>
+            <div class="chip mb-1.5 w-fit text-[10px]">Phase 2 · Days 1–21 — Incubation</div>
+            <h4 class="text-sm font-600 mb-2" style="color:#e8f5ed">Humidity Saturation Management</h4>
+            <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.55); line-height:1.8;">Incubation humidity is the most critical parameter for clutch viability. The ideal microclimate around a developing clutch is 80–90% relative humidity — high enough to prevent embryo desiccation, but with no direct water contact (which drowns developing eggs by blocking oxygen exchange across the permeable egg membrane). In a tightly covered aquarium with water at 26–28 °C, evaporation naturally maintains this humidity band without intervention. For transferred clutches in separate containers: place the clutch on an elevated mesh or plastic platform inside a container with 1–2 cm of water in the base (water level must never contact the clutch). Seal the container to retain humidity. If the clutch surface appears dusty-dry, mist the container interior lightly every 48 hours — avoid direct spray onto eggs. Development is temperature-dependent: at 26 °C, embryos complete development in 16–20 days. At 22 °C, development slows to 25–35 days. Below 20 °C, development may arrest entirely. Never attempt to peel or manually separate clutch eggs — the calcified matrix provides essential structural support and humidity regulation.</p>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -left-6 top-1" style="width:10px; height:10px; border-radius:50%; background:#86efac; box-shadow: 0 0 6px rgba(134,239,172,0.3)"></div>
+            <div class="chip mb-1.5 w-fit text-[10px]">Phase 3 · Days 16–28 — Emergence</div>
+            <h4 class="text-sm font-600 mb-2" style="color:#e8f5ed">Emergence Phase &amp; First-Week Protocol</h4>
+            <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.55); line-height:1.8;">As hatching approaches, the clutch matrix shifts from the initial bright pink-magenta toward a dark cocoa-brown as developing snails consume internal yolk reserves. Individual dark shell spirals become visible through the matrix walls 2–5 days before hatching. Hatchlings dissolve their egg cell wall using enzymatic secretions, then drop or crawl into the water below — emergence typically occurs over 12–36 hours as individuals hatch at slightly different rates. <strong style="color:#86efac;">Critical first-week nutrition:</strong> data from controlled rearing studies shows that hatchlings with access to natural algae biofilm within the first 8 hours of water entry achieve survival rates of 88–92%; those fed exclusively on commercial powder foods achieve only 60–68%. Establishing a well-lit, algae-rich environment before anticipated hatching is therefore mandatory. Provide fine sponge prefilter covers on all intakes — hatchling shells are 2–3 mm and can be easily ingested by standard filter intakes. New shell growth should be visible at the aperture within 24–48 hours in properly mineralised water (GH ≥12 dGH, pH ≥7.2).</p>
+          </div>
+        </div>
+      </div><!-- /incubation pipeline -->
+
+      <!-- Sexing guide card -->
+      <div class="bento-card card-glow rounded-2xl p-5" style="background:rgba(15,38,20,0.8); border:1px solid rgba(34,197,94,0.12)">
+        <div class="section-eyebrow mb-3">Reproductive Biology · Sexual Determination</div>
+        <h3 class="font-mono text-lg mb-3" style="letter-spacing:-0.02em">Sexing Mystery Snails</h3>
+        <p class="text-sm mb-4" style="color:rgba(232,245,237,0.6); line-height:1.8;"><em>P. diffusa</em> is <strong class="text-lime-300">strictly dioecious</strong> — biologically separate male and female sexes with no hermaphroditism or capacity for self-fertilisation (unlike the gonochoric plasticity seen in some other gastropod families). Sex cannot be determined from external shell characteristics (size, colour, shape) alone with any reliability. Accurate sexing requires direct visual inspection of the mantle cavity when the snail is fully extended and climbing a vertical surface. Best performed by holding the snail up and observing through the shell aperture with direct lighting.</p>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="rounded-xl p-3" style="background:rgba(34,197,94,0.05); border:1px solid rgba(34,197,94,0.1)">
+            <div class="text-xs font-600 text-lime-300 mb-2">♂ Male — Identification</div>
+            <ul class="text-xs space-y-1.5" style="color:rgba(232,245,237,0.6); line-height:1.65;">
+              <li>• Visible pale, curved <strong class="text-lime-300">penis sheath</strong> in upper right area of the mantle cavity (from observer's perspective)</li>
+              <li>• Sheath is distinct, fleshy, and approximately 5–8 mm long when visible in adult specimens</li>
+              <li>• May retract when snail is stressed — allow 5–10 minutes observation of a relaxed, actively climbing snail</li>
+              <li>• On average slightly smaller shell at equivalent age, but size overlap is substantial</li>
+            </ul>
+          </div>
+          <div class="rounded-xl p-3" style="background:rgba(74,222,128,0.04); border:1px solid rgba(74,222,128,0.1)">
+            <div class="text-xs font-600 mb-2" style="color:#86efac">♀ Female — Identification</div>
+            <ul class="text-xs space-y-1.5" style="color:rgba(232,245,237,0.6); line-height:1.65;">
+              <li>• Mantle cavity is <strong style="color:#86efac">completely free</strong> of any penial sheath structure — smooth, uniform tissue only</li>
+              <li>• Often (not always) marginally larger shell than males of equivalent age</li>
+              <li>• Definitive confirmation: deposits calcified egg clutch above waterline</li>
+              <li>• May carry stored sperm for months after a single mating</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-3 p-3 rounded-xl" style="background:rgba(34,197,94,0.04); border:1px solid rgba(34,197,94,0.08)">
+          <div class="text-xs" style="color:rgba(134,239,172,0.6); line-height:1.7;"><strong class="text-lime-300">Colony size recommendation:</strong> Purchase 5–6 snails from the same source batch to ensure a mix of sexes. With random sex ratios, a group of 4 has a 12.5% chance of being single-sex; a group of 6 reduces this to ~3%. Acquiring from different batches maximises genetic diversity and reduces inbreeding depression effects that emerge in closed colonies after 3–5 generations.</div>
+        </div>
+      </div>
+
+    </div><!-- /left column -->
+
+    <!-- Right: clutch ID + tips -->
+    <div class="space-y-4">
+
+      <!-- Clutch identification card -->
+      <div class="bento-card rounded-2xl overflow-hidden" style="border:1px solid rgba(34,197,94,0.15)">
+        <div class="relative aspect-video img-placeholder">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center">
+              <div class="section-eyebrow mb-1">Clutch Photography Reference</div>
+              <div class="text-xs" style="color:rgba(134,239,172,0.4)">[Mystery snail egg clutch · above waterline]</div>
+            </div>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-forest-800 to-transparent"></div>
+        </div>
+        <div class="p-4" style="background:rgba(15,38,20,0.9)">
+          <div class="section-eyebrow mb-2">Clutch Viability Assessment by Stage</div>
+          <div class="space-y-2 text-sm" style="color:rgba(232,245,237,0.6); line-height:1.75;">
+            <div><strong class="text-lime-300">Days 0–3 — Bright pink-magenta, firm matrix:</strong> Fresh, viable clutch. The calcified outer layer is still hardening. Colour indicates freshly deposited haemolymph-derived pigments in the egg coating.</div>
+            <div><strong style="color:#fbbf24">Days 4–14 — Darkening to cocoa-brown, small dark spots appearing:</strong> Healthy development. The dark spots are developing embryo shells visible through the translucent matrix. Normal discolouration.</div>
+            <div><strong style="color:#86efac">Days 14–21 — Grey-brown, matrix softening, dark spirals clearly visible:</strong> Pre-emergence stage. Clutch should feel slightly soft and yielding. Do not disturb.</div>
+            <div><strong style="color:#f87171">Any Stage — White/pale, no colour change, may show white fuzzy mould:</strong> Infertile or non-viable clutch. Remove immediately to prevent mould spreading to viable clutches and to maintain water quality.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dry zone pro tip -->
+      <div class="bento-card rounded-2xl p-5" style="background:rgba(22,53,32,0.8); border:1px solid rgba(34,197,94,0.2)">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-6 h-6 rounded flex items-center justify-center" style="background:#22c55e">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0a1a0f" stroke-width="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="text-xs font-600 text-lime-200">Critical: The Reproductive Dry Zone</span>
+        </div>
+        <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.65); line-height:1.8;">Always maintain a minimum 2–4 inch (5–10 cm) dry air gap between the water surface and the tank lid. Without this "Reproductive Dry Zone," gravid females cannot deposit their clutches and may become <strong class="text-lime-300">egg-bound</strong> — a condition where calcified egg masses cannot be expelled, causing internal injury and death within days to weeks. Egg-binding is one of the most common preventable causes of female mystery snail mortality in captivity. If a female is observed repeatedly attempting to exit the water over 24–48 hours without successfully laying, lower the water level immediately and inspect the lid area for adequate dry surface.</p>
+      </div>
+
+      <!-- Population control warning -->
+      <div class="bento-card warn-stripe rounded-2xl p-5" style="background:rgba(245,158,11,0.05); border:1px solid rgba(245,158,11,0.2)">
+        <div class="flex items-start gap-3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" class="flex-shrink-0 mt-0.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <div>
+            <div class="text-sm font-600 mb-2" style="color:#fbbf24">Population Control Strategies</div>
+            <p class="text-sm" style="color:rgba(251,191,36,0.7); line-height:1.8;"><strong style="color:#fbbf24">Method 1 — Eliminate the Dry Zone:</strong> Maintain water level within 2–3 cm of the lid; no accessible dry surface = no successful egg deposition. <strong style="color:#fbbf24">Method 2 — Clutch removal:</strong> Remove fresh clutches within 24–48 hours of deposition by scraping gently with a credit card — before the matrix fully hardens. <strong style="color:#fbbf24">Method 3 — Single sex:</strong> Keep only females or only males. Note: females may carry stored sperm at time of purchase and produce fertile clutches for several months even without a male present. Removing the male does not immediately stop reproduction.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /right column -->
+  </div><!-- /2-col grid -->
+
+</div>
+</section>
+<!-- ════════ END MODULE 06 ════════ -->
+
+
+<!-- ════════════════════════════════════════════
+     MODULE 07 — SHELL HEALTH & PATHOLOGIES
+     Shell dissolution biochemistry, calcium deficiency
+     pathology, pitting/erosion diagnosis & treatment,
+     operculum clinical assessment, copper toxicity
+     mechanism, contraindicated substances
+═════════════════════════════════════════════ -->
+<section id="module-07" class="relative py-20 overflow-hidden">
+<div class="glow-orb w-[400px] h-[400px] bg-red-400 opacity-[0.04] left-0 top-1/2"></div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+
+  <div class="mb-12">
+    <div class="module-label mb-1">Module 07 · Clinical Pathology</div>
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mt-2">
+      <h2 class="font-mono" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.02em;">Shell Health &amp;<br>Common Pathologies</h2>
+      <p class="max-w-sm text-sm" style="color:rgba(232,245,237,0.5); line-height:1.75;">Shell condition is the primary bioindicator of systemic health in <em>P. diffusa</em>. Early identification and intervention can fully arrest most shell pathologies and allow partial recovery.</p>
+    </div>
+  </div>
+
+  <div class="grid lg:grid-cols-[1fr_1.2fr] gap-6 mb-6">
+
+    <!-- Left: pathology protocols + copper warning -->
+    <div class="space-y-4">
+
+      <!-- Clinical pathology reference card -->
+      <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.8); border:1px solid rgba(34,197,94,0.12)">
+        <div class="section-eyebrow mb-4">Pathology Reference · Diagnosis &amp; Intervention</div>
+
+        <div class="flex items-start gap-4 mb-5 pb-5" style="border-bottom:1px solid rgba(34,197,94,0.08)">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,197,94,0.12); border:1px solid rgba(34,197,94,0.2)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-600 mb-2" style="color:#e8f5ed">Translucent Shell Edge — Calcium Deficiency</h4>
+            <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.55); line-height:1.8;"><strong>Pathophysiology:</strong> The leading edge of the shell (the aperture region where new material is deposited) appears glassy, transparent, or paper-thin rather than the normal opaque, solid colour. This indicates the mantle epithelium cannot deposit aragonite at a sufficient rate — the calcium ion concentration at the deposition site is inadequate, the pH is too low for supersaturation, or a dietary calcium deficit limits mantle calcium reserves. <strong>Intervention protocol:</strong> (1) Test and raise water GH to minimum 12 dGH. (2) Test pH — raise to 7.4–7.8 by adding cuttlebone and/or crushed coral to filter media. (3) Increase dietary calcium via blanched kale (highest Ca: oxalate ratio of common greens), broccoli stems, and fresh cuttlebone. (4) Perform a 30% water change to reset mineral ratios. Improvement (opaque new shell visible at the aperture) should appear within 10–14 days of correction. Old translucent shell does not become opaque — monitor new growth for recovery confirmation.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 mb-5 pb-5" style="border-bottom:1px solid rgba(34,197,94,0.08)">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,197,94,0.12); border:1px solid rgba(34,197,94,0.2)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-600 mb-2" style="color:#e8f5ed">Shell Pitting, Erosion &amp; Perforation</h4>
+            <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.55); line-height:1.8;"><strong>Pathophysiology:</strong> Localised pinholes, rough pitted texture, or through-shell perforations in the existing shell whorls (not at the aperture growth edge). Caused by chemical dissolution of the aragonite biomineral by carbonic acid (H₂CO₃) or direct acid attack in low-pH conditions. The periostracum (outer protein layer) normally protects the underlying calcite from mild acid — when the periostracum is thin (as in Ivory and Blue morphs) or chemically damaged, the calcite layer is exposed and dissolves at accelerating rates. Severe pitting can compromise the shell's structural integrity to the point where soft tissue is exposed to the water column, enabling fatal infections. <strong>Intervention:</strong> Same GH/pH correction as above, plus add Wonder Shell for acute mineral replenishment. Use Seachem Equilibrium to raise GH without altering pH chemistry unpredictably. Note: existing pits and holes do not repair — the shell matrix does not regenerate damaged areas. New growth at the aperture will be healthy; damaged whorls remain damaged permanently.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,197,94,0.12); border:1px solid rgba(34,197,94,0.2)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-600 mb-2" style="color:#e8f5ed">Operculum Clinical Assessment</h4>
+            <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.55); line-height:1.8;"><strong>Healthy baseline:</strong> The operculum is firm, flat, and completely seals the shell aperture when the snail retracts. The surface is smooth and the attachment to the foot margin is secure. <strong>Early warning — Slightly sunken or deflated operculum:</strong> Indicates suboptimal nutritional status (particularly protein or calcium deficiency) or mild water quality stress. Improve diet and test water chemistry. <strong>Severe warning — Loose, detaching, or absent operculum:</strong> Indicates advanced distress — ammonia poisoning, heavy metal toxicity, severe calcium deficiency, or bacterial infection. Isolate the specimen, perform emergency 50% water change, test all parameters. <strong>Death differentiation:</strong> <em>P. diffusa</em> can sleep for up to 13 consecutive hours with the operculum fully sealed — this is normal. Test for death by gently removing the snail from water and smelling near the aperture opening. A deceased snail will emit an immediate, strong sulphurous odour (hydrogen sulfide from anaerobic bacterial decomposition) within seconds. A living, sleeping snail will be odourless. Remove confirmed deceased specimens immediately — a single decomposing adult can spike ammonia to fatal levels in a 10-gallon tank within 6–12 hours.</p>
+          </div>
+        </div>
+      </div><!-- /pathology card -->
+
+      <!-- Copper / contraindicated substances card -->
+      <div class="danger-card bento-card rounded-2xl p-5">
+        <div class="flex items-center gap-2 mb-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span class="text-sm font-600" style="color:#fca5a5">Contraindicated Substances · Acute Toxicity Protocol</span>
+        </div>
+        <div class="font-mono text-[10px] mb-3" style="color:rgba(239,68,68,0.4)">/copper-toxic-mystery-snail/</div>
+        <p class="text-sm leading-relaxed mb-3" style="color:rgba(252,165,165,0.8); line-height:1.8;">
+          <strong>Copper (Cu²⁺) is acutely lethal to all molluscs and crustaceans</strong> at concentrations as low as 0.015–0.02 mg/L — well below what standard aquarium test kits can reliably detect. The mechanism of toxicity involves Cu²⁺ binding to haemocyanin (the copper-based oxygen-transport protein in gastropod haemolymph), disrupting gill membrane function, and inhibiting key enzymatic processes. Exposure causes rapid respiratory failure. There is no reversible threshold — any detectable copper in a mystery snail tank represents a lethal risk. Always read the full ingredient list of any aquarium product before use. Note that many commercial fertilisers list copper as a micronutrient (often as copper sulfate or copper EDTA) at concentrations that, while safe for fish, exceed the lethal threshold for snails.
+        </p>
+        <div class="space-y-1.5 text-sm mb-3" style="color:rgba(252,165,165,0.6); line-height:1.65;">
+          <div class="flex gap-2">⚠ Ich / white spot treatments: most contain copper sulfate (CuSO₄) as the active ingredient</div>
+          <div class="flex gap-2">⚠ Planted tank fertilisers: check for "copper sulfate," "cupric sulfate," or "Cu" in trace element blends</div>
+          <div class="flex gap-2">⚠ Fish foods: some commercial fish foods contain copper sulfate as an ingredient</div>
+          <div class="flex gap-2">⚠ Tap water from copper plumbing: use full-spectrum dechlorinator that neutralises heavy metals (e.g. Seachem Prime)</div>
+          <div class="flex gap-2">⚠ General anti-parasitic or anti-fungal treatments: always verify copper-free formulation</div>
+        </div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="chip chip-danger text-[10px]">copper toxicity</span>
+          <span class="chip chip-warn text-[10px]">fertilizer snail safety</span>
+          <span class="chip chip-danger text-[10px]">CuSO₄ lethal threshold</span>
+          <span class="chip chip-danger text-[10px]">copper toxic snails</span>
+        </div>
+      </div>
+
+    </div><!-- /left column -->
+
+    <!-- Right: specimen analysis + FAQ -->
+    <div class="space-y-4">
+
+      <!-- Shell specimen card -->
+      <div class="bento-card rounded-2xl overflow-hidden" style="border:1px solid rgba(34,197,94,0.15)">
+        <div class="relative aspect-square img-placeholder max-h-64 overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center flex-col gap-2">
+            <div class="section-eyebrow">Shell Specimen Analysis</div>
+            <div class="text-xs" style="color:rgba(134,239,172,0.3)">[High-resolution shell cross section]</div>
+          </div>
+          <div class="absolute top-3 right-3 rounded-lg px-3 py-2 text-xs" style="background:rgba(10,26,15,0.85); border:1px solid rgba(34,197,94,0.2)">
+            <div class="section-eyebrow mb-1">Structural Analysis</div>
+            <div class="data-num text-lime-300">⊕ Scanning</div>
+          </div>
+        </div>
+        <div class="p-4" style="background:rgba(15,38,20,0.95)">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-xs" style="color:rgba(134,239,172,0.6)">Shell Mineral Density Index</span>
+            <span class="chip chip-warn text-[10px]">60% — Suboptimal</span>
+          </div>
+          <div class="param-bar mb-3"><div class="param-bar-fill" style="width:60%"></div></div>
+          <p class="text-xs mb-3" style="color:rgba(134,239,172,0.5); line-height:1.7;">Shell density below 75% indicates calcium-deficiency-mediated dissolution is occurring faster than mantle deposition. Immediate corrective action required: raise GH to ≥14 dGH, raise pH to 7.4–7.8, add cuttlebone and crushed coral supplementation simultaneously. Monitor aperture region for opaque new growth within 10–14 days.</p>
+          <div class="grid grid-cols-3 gap-2 text-[10px] text-center" style="color:rgba(134,239,172,0.5)">
+            <div class="rounded p-1.5" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.1)">
+              <div class="data-num text-lime-300 text-sm">7.6</div><div>pH target</div>
+            </div>
+            <div class="rounded p-1.5" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.1)">
+              <div class="data-num text-lime-300 text-sm">14 dGH</div><div>GH target</div>
+            </div>
+            <div class="rounded p-1.5" style="background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.1)">
+              <div class="data-num text-lime-300 text-sm">0</div><div>Cu ppm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /right column -->
+  </div><!-- /2-col grid -->
+
+</div>
+</section>
+<!-- ════════ END MODULE 07 ════════ -->
+
+
+<!-- ════════════════════════════════════════════
+     TEMPLATE — MODULES 08–40
+     Copy the block below, increment id, add matching
+     pill to #wiki-pills nav above in same order.
+═════════════════════════════════════════════ -->
+<!--
+<section id="module-08" class="relative py-20">
+<div class="max-w-7xl mx-auto px-6">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+    <div>
+      <div class="module-label mb-1">Module 08 · [Topic Category]</div>
+      <h2 class="font-mono mt-1" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.02em;">[Module Title]</h2>
+      <p class="mt-2 text-sm" style="color:rgba(232,245,237,0.5); line-height:1.75;">[Short module description]</p>
+    </div>
+    <span class="chip">[Optional chip label]</span>
+  </div>
+  <div class="grid md:grid-cols-[1fr_1fr] gap-4">
+    <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.7); border:1px solid rgba(34,197,94,0.1)">
+      <div class="section-eyebrow mb-1">[Card Eyebrow]</div>
+      <h3 class="font-mono text-lg mt-1 mb-3" style="letter-spacing:-0.02em">[Card Title]</h3>
+      <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.6); line-height:1.8;">[Card body — aim for 60+ words minimum per card]</p>
+    </div>
+    <div class="bento-card card-glow rounded-2xl p-6" style="background:rgba(15,38,20,0.7); border:1px solid rgba(34,197,94,0.1)">
+      <div class="section-eyebrow mb-1">[Card Eyebrow]</div>
+      <h3 class="font-mono text-lg mt-1 mb-3" style="letter-spacing:-0.02em">[Card Title]</h3>
+      <p class="text-sm leading-relaxed" style="color:rgba(232,245,237,0.6); line-height:1.8;">[Card body]</p>
+    </div>
+  </div>
+</div>
+</section>
+-->
 
 <!-- ════════════════════════════════════════════
      FAQ — FREQUENTLY ASKED QUESTIONS
@@ -1379,7 +1737,6 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
   </div>
 </section>
 
-
 <!-- ════════════════════════════════════════════
      FOOTER
 ═════════════════════════════════════════════ -->
@@ -1388,13 +1745,12 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
   <div class="max-w-7xl mx-auto px-6 relative z-10">
     <div class="grid md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-8 mb-12">
 
-      <!-- Brand blurb -->
       <div>
         <div class="flex items-center gap-2 mb-3">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2C5 2 3 4.5 3 7c0 1.5.6 2.8 1.5 3.8L8 14l3.5-3.2C12.4 9.8 13 8.5 13 7c0-2.5-2-5-5-5z" fill="rgba(34,197,94,0.3)" stroke="#22c55e" stroke-width="1"/><circle cx="8" cy="7" r="1.5" fill="#22c55e"/></svg>
           <span class="font-mono text-lg text-lime-300">Mystery Snail Wiki</span>
         </div>
-        <p class="text-xs leading-relaxed mb-4" style="color:rgba(134,239,172,0.4)">Elevating the standard of aquatic invertebrate care through scientific data and design. Join 12,000+ aquatic hobbyists.</p>
+        <p class="text-xs leading-relaxed mb-4" style="color:rgba(134,239,172,0.4)">Elevating the standard of aquatic invertebrate care through scientific data and design. Join 12,000+ aquatic hobbyists worldwide.</p>
         <div class="flex gap-3">
           <a href="#" class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-lime-200/10 transition-colors" style="border:1px solid rgba(34,197,94,0.2)">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(134,239,172,0.6)" stroke-width="2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
@@ -1405,7 +1761,6 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
         </div>
       </div>
 
-      <!-- Module index in footer -->
       <div>
         <div class="text-xs font-600 text-lime-300 mb-3 section-eyebrow">Module Index</div>
         <ul class="space-y-2 text-xs" style="color:rgba(134,239,172,0.5)">
@@ -1419,7 +1774,6 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
         </ul>
       </div>
 
-      <!-- Connect -->
       <div>
         <div class="text-xs font-600 text-lime-300 mb-3 section-eyebrow">Connect</div>
         <ul class="space-y-2 text-xs" style="color:rgba(134,239,172,0.5)">
@@ -1430,7 +1784,6 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
         </ul>
       </div>
 
-      <!-- Newsletter -->
       <div>
         <div class="text-xs font-600 text-lime-300 mb-3 section-eyebrow">Newsletter</div>
         <p class="text-xs mb-3" style="color:rgba(134,239,172,0.4)">Weekly care tips and breeder updates.</p>
@@ -1439,11 +1792,11 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
           <button class="w-full rounded-lg py-2 text-xs font-600 bg-lime-200 hover:bg-lime-300 transition-colors" style="color:#0a1a0f">Subscribe</button>
         </div>
       </div>
-    </div><!-- /footer grid -->
+    </div>
 
     <div class="divider mb-6"></div>
     <div class="flex flex-col md:flex-row justify-between items-center gap-3">
-      <p class="text-[10px]" style="color:rgba(134,239,172,0.3)">© 2025 Mystery Snail Wiki · Bio-Archive. WARNING: Copper is acutely toxic to all gastropods.</p>
+      <p class="text-[10px]" style="color:rgba(134,239,172,0.3)">© 2025 Mystery Snail Wiki · Bio-Archive. WARNING: Copper is acutely toxic to all gastropods at any detectable concentration.</p>
       <div class="flex gap-4 text-[10px]" style="color:rgba(134,239,172,0.3)">
         <a href="#" class="hover:text-lime-300 transition-colors">Privacy Policy</a>
         <a href="#" class="hover:text-lime-300 transition-colors">Terms of Service</a>
@@ -1454,7 +1807,9 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
 
 
 <!-- ════════════════════════════════════════════
-     SCRIPTS
+     SCRIPTS — DO NOT MODIFY
+     All interaction logic is preserved verbatim
+     from the source file to maintain UI fidelity.
 ═════════════════════════════════════════════ -->
 <script>
 /* ── Custom cursor with lag-follow effect ── */
