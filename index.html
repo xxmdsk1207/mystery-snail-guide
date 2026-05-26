@@ -246,35 +246,63 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
 <div class="cursor-ring" id="ring"></div>
 
 <!-- ════════════════════════════════════════════
-     TOP NAVIGATION BAR
-     Nav links ordered: 01 → 07 matching module sequence
+     TOP NAVIGATION BAR — AquaSnail Hub v2
+     Species tabs on left; page nav links center-right
 ═════════════════════════════════════════════ -->
 <nav class="nav-glass fixed top-0 left-0 right-0 z-50">
-  <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
-    <div class="flex items-center gap-2.5">
-      <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
-        <path d="M8 2C5 2 3 4.5 3 7c0 1.5.6 2.8 1.5 3.8L8 14l3.5-3.2C12.4 9.8 13 8.5 13 7c0-2.5-2-5-5-5z" fill="rgba(34,197,94,0.25)" stroke="#4ade80" stroke-width="1"/>
-        <circle cx="8" cy="7" r="1.5" fill="#4ade80"/>
-      </svg>
-      <div>
-        <span class="font-mono text-sm text-lime-300 tracking-wide">MysterySnailWiki</span>
-        <span class="hidden sm:inline font-mono text-[10px] ml-2" style="color:rgba(74,222,128,0.35); letter-spacing:0.1em">Pomacea diffusa · Bio-Archive</span>
+  <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between gap-4">
+
+    <!-- LEFT: brand + species-switcher tabs -->
+    <div class="flex items-center gap-3 min-w-0">
+      <!-- Brand mark -->
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <!-- Snail shell spiral — outer whorl → inner whorl → apex dot -->
+          <path d="M8 2.5 C11.5 2.5 13.5 5 13.5 7.5 C13.5 10.5 11 12.5 8 12.5 C5.5 12.5 3.5 10.8 3.5 8.5 C3.5 6.5 5 5 7 5 C8.8 5 10 6.2 10 7.8 C10 9.2 9 10 7.8 10 C6.8 10 6 9.3 6 8.3"
+            stroke="#4ade80" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+          <circle cx="8" cy="7.5" r="1" fill="rgba(34,197,94,0.25)" stroke="#4ade80" stroke-width="0.8"/>
+        </svg>
+        <span class="font-mono text-xs text-lime-300 tracking-wide hidden sm:inline" style="opacity:0.7">AquaSnail</span>
+        <span class="font-mono text-[9px] hidden sm:inline" style="color:rgba(74,222,128,0.3)">/</span>
+      </div>
+
+      <!-- Species tabs -->
+      <div class="flex items-center gap-1">
+        <!-- ACTIVE: Mystery Snail -->
+        <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-md font-mono text-[11px] text-lime-300 cursor-default"
+              style="background:rgba(34,197,94,0.12); border:1px solid rgba(34,197,94,0.3);">
+          <span class="w-1.5 h-1.5 rounded-full bg-lime-200 animate-pulse inline-block"></span>
+          Mystery Snail
+        </span>
+
+        <!-- LOCKED: Nerite -->
+        <span title="Coming June 2026" class="relative flex items-center gap-1.5 px-2.5 py-1 rounded-md font-mono text-[11px] cursor-not-allowed select-none"
+              style="color:rgba(134,239,172,0.28); border:1px solid rgba(34,197,94,0.1); background:rgba(34,197,94,0.03);">
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="opacity-60"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Nerite Snail
+          <span class="absolute -top-2 -right-1 font-mono text-[8px] px-1 rounded" style="background:rgba(245,158,11,0.15); color:rgba(251,191,36,0.7); border:1px solid rgba(245,158,11,0.2); letter-spacing:0.05em;">Jun</span>
+        </span>
+
+        <!-- LOCKED: Rabbit -->
+        <span title="Planned" class="flex items-center gap-1.5 px-2.5 py-1 rounded-md font-mono text-[11px] cursor-not-allowed select-none"
+              style="color:rgba(134,239,172,0.2); border:1px solid rgba(34,197,94,0.08); background:rgba(34,197,94,0.02);">
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="opacity-40"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Rabbit Snail
+        </span>
       </div>
     </div>
-    <div class="hidden md:flex items-center gap-1">
+
+    <!-- CENTER: page nav links (desktop only) -->
+    <div class="hidden md:flex items-center gap-1 flex-1 justify-center">
       <a href="#module-02" class="px-3 py-1.5 rounded-lg text-xs font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55)">Variety Index</a>
       <a href="#module-03" class="px-3 py-1.5 rounded-lg text-xs font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55)">Beginner Guide</a>
       <a href="#module-06" class="px-3 py-1.5 rounded-lg text-xs font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55)">Breeding</a>
       <a href="#module-07" class="px-3 py-1.5 rounded-lg text-xs font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55)">Health &amp; Safety</a>
     </div>
-    <div class="flex md:hidden items-center gap-1">
-      <a href="#module-02" class="px-2 py-1 rounded text-[11px] font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55)">Variety</a>
-      <a href="#module-03" class="px-2 py-1 rounded text-[11px] font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55)">Beginner</a>
-      <a href="#module-06" class="px-2 py-1 rounded text-[11px] font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55)">Breeding</a>
-      <a href="#module-07" class="px-2 py-1 rounded text-[11px] font-mono hover:bg-lime-200/10 hover:text-lime-300 transition-all duration-200" style="color:rgba(134,239,172,0.55)">Health</a>
-    </div>
-    <div class="flex items-center gap-2">
-      <span class="chip text-[10px] font-mono" style="letter-spacing:0.08em">WIKI · v3.0</span>
+
+    <!-- RIGHT: version chip -->
+    <div class="flex items-center gap-2 flex-shrink-0">
+      <span class="chip text-[10px] font-mono hidden sm:inline-flex" style="letter-spacing:0.06em;">Vol.01</span>
     </div>
   </div>
 </nav>
@@ -300,10 +328,15 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
       <!-- Left: headline + CTAs + quick-reference strip -->
       <div style="margin-top:-10px;">
         <div class="fade-up delay-1">
-          <span class="section-eyebrow">Bio-Archive · Comprehensive Field Monograph · Pomacea diffusa</span>
+          <!-- Vol. label — reads as: AquaSnail Bio-Archive // Vol. 01 -->
+          <div class="flex items-center gap-2 flex-wrap">
+          <span class="font-mono text-[10px] tracking-[0.22em] uppercase" style="color:rgba(74,222,128,0.45);">AquaSnail Bio-Archive</span>
+          <span class="font-mono text-[10px]" style="color:rgba(34,197,94,0.25)">//</span>
+          <span class="font-mono text-[10px] px-2 py-0.5 rounded" style="background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.25); color:rgba(74,222,128,0.75); letter-spacing:0.14em;">VOL. 01</span>
         </div>
-        <h1 class="fade-up delay-2 mt-4 font-mono leading-[1.05]" style="font-size: clamp(2.2rem, 4.5vw, 4.4rem); letter-spacing:-0.03em;">
-          <span style="white-space:nowrap;">MysterySnail</span><br><span class="gradient-text">Wiki</span>
+      </div>
+        <h1 class="fade-up delay-2 mt-3 font-mono leading-[1.05]" style="font-size: clamp(2.2rem, 4.5vw, 4.4rem); letter-spacing:-0.03em;">
+        <span style="white-space:nowrap;">MysterySnail</span><br><span class="gradient-text">Wiki</span>
         </h1>
         <p class="fade-up delay-3 mt-5 max-w-lg" style="font-size:15px; color:rgba(232,245,237,0.65); line-height:1.8;">
           A complete scientific knowledge archive on <em>Pomacea diffusa</em> husbandry — taxonomy, color genetics, water chemistry, breeding biology, nutrition, and pathology. All in one authoritative reference.
@@ -1918,6 +1951,106 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
     </div>
   </div>
 </section>
+
+<!-- ════════════════════════════════════════════
+     SPECIES DIRECTORY & ROADMAP
+     Inserted between last content section and footer.
+     Shows the full AquaSnail Hub publishing pipeline.
+═════════════════════════════════════════════ -->
+<section class="relative py-16 overflow-hidden">
+  <div class="glow-orb w-[500px] h-[500px] bg-lime-300 opacity-[0.03] left-1/2 -translate-x-1/2 top-0"></div>
+  <div class="max-w-3xl mx-auto px-6 relative z-10">
+
+    <!-- Card -->
+    <div class="bento-card rounded-2xl p-6" style="background:rgba(10,22,14,0.85); border:1px solid rgba(34,197,94,0.18); box-shadow:0 0 0 1px rgba(34,197,94,0.06), 0 24px 64px rgba(0,0,0,0.5);">
+
+      <!-- Header -->
+      <div class="flex items-start justify-between gap-4 mb-6">
+        <div>
+          <div class="font-mono text-[10px] tracking-[0.18em] uppercase mb-2" style="color:rgba(74,222,128,0.45);">AquaSnail Hub · Publishing Pipeline</div>
+          <h2 class="font-mono text-lg" style="color:#e8f5ed; letter-spacing:-0.02em;">Species Directory &amp; Roadmap</h2>
+          <p class="text-xs mt-1.5" style="color:rgba(134,239,172,0.4); line-height:1.6;">This wiki is Vol. 01 of a growing multi-species archive. Each volume covers one genus in full scientific depth.</p>
+        </div>
+        <!-- Decorative terminal blink -->
+        <div class="flex-shrink-0 font-mono text-[10px] mt-1" style="color:rgba(34,197,94,0.35);">
+          <span>SYS:</span><span class="animate-pulse">█</span>
+        </div>
+      </div>
+
+      <!-- Species list — console style -->
+      <div class="space-y-3 mb-6">
+
+        <!-- Vol 01: Mystery Snail — LIVE -->
+        <div class="flex items-start gap-3 px-4 py-3 rounded-xl" style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2);">
+          <span class="text-base flex-shrink-0 mt-0.5">🟢</span>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="font-mono text-sm font-600 text-lime-300">Mystery Snail Archive</span>
+              <span class="chip text-[9px]" style="font-size:9px; padding:2px 7px;">Vol. 01 · LIVE</span>
+            </div>
+            <div class="font-mono text-[10px] mt-0.5" style="color:rgba(34,197,94,0.5);">
+              Pomacea diffusa · 7 modules · 100% complete
+            </div>
+          </div>
+          <div class="flex-shrink-0 w-6 h-6 rounded flex items-center justify-center" style="background:rgba(34,197,94,0.15);">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Vol 02: Nerite — Coming Soon -->
+        <div class="flex items-start gap-3 px-4 py-3 rounded-xl" style="background:rgba(245,158,11,0.05); border:1px solid rgba(245,158,11,0.18);">
+          <span class="text-base flex-shrink-0 mt-0.5">🟡</span>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="font-mono text-sm font-600" style="color:rgba(251,191,36,0.85);">Nerite Snail Archive</span>
+              <span class="chip chip-warn text-[9px]" style="font-size:9px; padding:2px 7px;">Vol. 02 · Data Compiling</span>
+            </div>
+            <div class="font-mono text-[10px] mt-0.5" style="color:rgba(251,191,36,0.4);">
+              Neritina spp. · Est. June 2026
+            </div>
+          </div>
+          <!-- Progress bar -->
+          <div class="flex-shrink-0 flex flex-col items-end gap-1">
+            <span class="font-mono text-[9px]" style="color:rgba(251,191,36,0.5);">35%</span>
+            <div class="w-16 h-1 rounded-full" style="background:rgba(245,158,11,0.12);">
+              <div class="h-full rounded-full" style="width:35%; background:linear-gradient(90deg,#f59e0b,#fbbf24);"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vol 03: Rabbit Snail — Planned -->
+        <div class="flex items-start gap-3 px-4 py-3 rounded-xl" style="background:rgba(134,239,172,0.03); border:1px solid rgba(134,239,172,0.08);">
+          <span class="text-base flex-shrink-0 mt-0.5">⚪</span>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="font-mono text-sm font-600" style="color:rgba(134,239,172,0.35);">Rabbit Snail Archive</span>
+              <span class="font-mono text-[9px] px-1.5 py-0.5 rounded" style="color:rgba(134,239,172,0.3); border:1px solid rgba(134,239,172,0.12); letter-spacing:0.06em;">Vol. 03 · Planned</span>
+            </div>
+            <div class="font-mono text-[10px] mt-0.5" style="color:rgba(134,239,172,0.25);">
+              Tylomelania spp. · Timeline TBD
+            </div>
+          </div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(134,239,172,0.2)" stroke-width="2" class="flex-shrink-0 mt-1"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+
+      </div><!-- /species list -->
+
+      <!-- Footer: CTA buttons -->
+      <div class="flex flex-col sm:flex-row gap-3 pt-5" style="border-top:1px solid rgba(34,197,94,0.1);">
+
+        <!-- Subscribe button -->
+        <button onclick="document.querySelector('input[type=email]')?.scrollIntoView({behavior:'smooth'})"
+                class="flex-1 flex items-center justify-center gap-2 rounded-xl py-2.5 font-mono text-xs transition-all duration-200 hover:shadow-[0_0_16px_rgba(34,197,94,0.25)]"
+                style="background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.25); color:rgba(74,222,128,0.9);">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          Subscribe to Updates
+        </button>
+
+      </div>
+    </div><!-- /card -->
+  </div>
+</section>
+<!-- ════════ END ROADMAP ════════ -->
 
 <!-- ════════════════════════════════════════════
      FOOTER
