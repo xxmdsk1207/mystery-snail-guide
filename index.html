@@ -428,21 +428,6 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
 ::-webkit-scrollbar-thumb { background: rgba(34,197,94,0.3); border-radius: 2px; }
 
 /* ══════════════════════════════════════════
-   PICTURE GRACEFUL FALLBACK
-   When specimen-img fails to load (broken src),
-   browser hides the img via object CSS, revealing
-   the SVG fallback below it. No onerror JS needed.
-══════════════════════════════════════════ */
-.specimen-img { display: block; }
-.specimen-img + .snail-svg-fallback { display: none !important; }
-.specimen-img:not([src]),
-.specimen-img[src=""] { display: none !important; }
-/* Modern browsers: on load-error hide img, show SVG */
-@supports selector(:has(img:not([src]))) {
-  picture:has(img:-moz-broken) + .snail-svg-fallback { display: flex !important; }
-}
-
-/* ══════════════════════════════════════════
    WIKI NAV INDEX — active state
 ══════════════════════════════════════════ */
 .wiki-nav-pill { transition: background 0.2s, border-color 0.2s, color 0.2s; }
@@ -617,28 +602,24 @@ details[open] .acc-body { animation: fadeUp 0.2s ease forwards; }
       <!-- Center: Holographic 360° Specimen Viewer -->
       <div class="fade-up delay-2 hidden lg:flex flex-col items-center justify-center gap-4" style="margin-top:-5px;">
         <div class="holo-label mb-1">Specimen · LIVE SCAN</div>
-        <div class="specimen-wrap relative flex items-center justify-center" style="width:260px; height:260px;">
+        <div class="specimen-wrap relative flex items-center justify-center"
+             style="width:260px; height:260px;"
+             role="img"
+             aria-label="Mystery Snail (Pomacea diffusa) — interactive 360° holographic specimen viewer, aquarium snail care wiki">
           <div class="holo-glow"></div>
           <div class="holo-ring-2"></div>
           <div class="holo-ring"></div>
           <div class="holo-ring-3"></div>
           <div class="holo-scan" style="top:30%"></div>
           <div class="specimen-inner" style="width:260px; height:260px;">
-            <!-- SEO-optimised picture element: graceful fallback without onerror JS -->
-            <picture>
-              <source srcset="./images/mystery-snail.webp" type="image/webp">
-              <img
-                src="./images/mystery-snail.png"
-                alt="Mystery Snail (Pomacea diffusa) — 360° holographic specimen scan for care guide"
-                class="specimen-img"
-                width="200" height="200"
-                style="width:200px; height:200px; max-width:none; max-height:none; object-fit:contain;"
-                loading="eager"
-                decoding="async"
-              />
-            </picture>
-            <!-- SVG fallback — shown via CSS when img fails (no inline onerror) -->
-            <div aria-hidden="true" style="width:200px; height:200px; align-items:center; justify-content:center; display:none;" class="snail-svg-fallback">
+            <!-- 360° holographic rotation component — CSS animation targets .specimen-img directly.
+                 Structure must not be wrapped. SEO handled via alt + aria-label on parent. -->
+            <img src="./images/mystery-snail.png"
+                 alt="Mystery Snail (Pomacea diffusa) — rotating 360° holographic specimen, aquarium snail care wiki"
+                 class="specimen-img"
+                 style="width:200px; height:200px; max-width:none; max-height:none; object-fit:contain;"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div style="display:none; width:200px; height:200px; align-items:center; justify-content:center;">
               <svg viewBox="0 0 200 200" width="200" height="200" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <ellipse cx="100" cy="108" rx="62" ry="56" fill="rgba(34,197,94,0.07)" stroke="rgba(34,197,94,0.25)" stroke-width="1"/>
                 <path d="M58 112 Q100 52 142 112 Q122 158 100 163 Q78 158 58 112Z" fill="rgba(34,197,94,0.1)" stroke="rgba(34,197,94,0.3)" stroke-width="1"/>
